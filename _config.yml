@@ -11,7 +11,7 @@ title                    : "Camille Ross"
 title_separator          : "-"
 name                     : &name "Camille Ross"
 description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://chross22.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chross22/chross22.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Camille Ross"
   avatar           : "profile.png"
-  bio              : "Research Technician, Bigelow Laboratory for Ocean Sciences"
-  location         : "East Boothbay, ME"
+  bio              : "Postdoctoral Research Associate, University of Maine"
+  location         : "Portland, ME"
   employer         :
   pubmed           :
-  googlescholar    : 
+  googlescholar    : "https://scholar.google.com/citations?user=3nb1r0AAAAAJ&hl=enr"
   email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : "https://www.researchgate.net/profile/Camille-Ross-3?ev=hdr_xprf"
   uri              :
   bitbucket        :
   codepen          :
@@ -255,7 +255,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/New_York # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
