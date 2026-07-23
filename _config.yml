@@ -11,8 +11,8 @@ title                    : "Camille Ross"
 title_separator          : "-"
 name                     : &name "Camille Ross"
 description              : &description "personal description"
-# github:
-#   repository_url.        : "https://your-custom-link.com"
+github:
+  repository_url.        : "https://chross22.github.io"
 url                      : "https://chross22.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chross22/chross22.github.io"
