@@ -1,15 +1,15 @@
 ---
-title: "Paper Title Number 3"
+title: "Estimating North Atlantic right whale prey based on <i>Calanus finmarchicus<i> thresholds"
 collection: publications
-permalink: /publication/2015-10-01-paper-title-number-3
-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
-date: 2015-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2015). &quot;Paper Title Number 3.&quot; <i>Journal 1</i>. 1(3).'
+permalink: /publication/ross-et-al-2023
+excerpt: "ABSTRACT: The planktonic copepod <i>Calanus finmarchicus</i> is a fundamental prey resource for the critically endangered North Atlantic right whale <i>Eubalaena glacialis</i>. Incorporation of prey information into <i>E. glacialis</i> decision support tools could improve management. Zooplankton time series are usually analyzed with respect to abundance, but predators such as <i>E. glacialis</i> forage based on whether prey aggregations exceed energetic thresholds. In order to better understand the distribution and dynamics of the high abundance end of <i>C. finmarchicus</i> on the northeastern US continental shelf, where <i>E. glacialis</i> feed, we modeled the environmental conditions associated with <i>C. finmarchicus</i> densities that exceed nominal feeding thresholds. Threshold values were chosen based on a review of <i>E. glacialis</i> feeding behavior throughout the domain. Following model selection procedures, we used a random forest model with bathymetry, bottom temperature, bottom salinity, day of year, sea surface temperature, sea surface temperature gradient, bathymetric slope, time-integrated chlorophyll, current velocity gradient, and wind covariates. Model performance was highest with thresholds that matched reported <i>E. glacialis</i> feeding thresholds equivalent to
+10 000 copepods m^{−2}. The high-density aggregations of <i>C. finmarchicus</i> had some different covariate responses compared to previous statistical abundance models, such as a warmer temperature range at both the surface and at depth, as well as a much higher degree of spatial variability. The output data layers of the model are designed to link with <i>E. glacialis</i> models used in US governmental decision support tools. Including this type of foraging information in decision support tools is a step forward in managing this critically endangered species."
+date: 2023-01-12
+venue: 'Marine Ecology Progress Series'
+paperurl: 'http://chross22.github.io/files/paper3.pdf'
+citation: '<b>Ross, C. H.</b>, Runge, J. A., Roberts, J. J., Brady, D. C., Tupper, B., and Record, N. R. 2023. Estimating North Atlantic right whale prey based on <i>Calanus finmarchicus</i> thresholds. <i>Marine Ecology Progress Series</i>, 703:1–16. https://doi.org/10.3354/meps14204.'
 ---
-This paper is about the number 3. The number 4 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper3.pdf)
+[Download paper here](http://chross22.github.io/files/paper3.pdf)
 
-Recommended citation: Your Name, You. (2015). "Paper Title Number 3." <i>Journal 1</i>. 1(3).
+Recommended citation: <b>Ross, C. H.</b>, Runge, J. A., Roberts, J. J., Brady, D. C., Tupper, B., and Record, N. R. 2023. Estimating North Atlantic right whale prey based on <i>Calanus finmarchicus</i> thresholds. <i>Marine Ecology Progress Series</i>, 703:1–16. https://doi.org/10.3354/meps14204.
