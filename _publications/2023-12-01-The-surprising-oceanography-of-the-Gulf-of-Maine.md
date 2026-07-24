@@ -11,4 +11,4 @@ citation: 'Record, N. R., Tupper, B., Evanilla, J., Oliveira, K., Ngai, L., <b>R
 
 [Download paper here](http://chross22.github.io/files/paper3.pdf)
 
-Recommended citation: Record, N. R., Tupper, B., Evanilla, J., Oliveira, K., Ngai, L., <b>Ross, C. H.</b>, and Stamieszkin, K. 2023. The surprising oceanography of the Gulf of Maine. <i>Maine Policy Review</i>, 32.2:20–28.
+Recommended citation: Record, N. R., Tupper, B., Evanilla, J., Oliveira, K., Ngai, L., <b>Ross, C. H.</b>, and Stamieszkin, K. 2023. The surprising oceanography of the Gulf of Maine. <i>Maine Policy Review</i>, 32.2:20–28. https://digitalcommons.library.umaine.edu/mpr/vol32/iss2/4.
