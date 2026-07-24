@@ -1,7 +1,7 @@
 ---
 title: "The surprising oceanography of the Gulf of Maine"
 collection: publications
-permalink: /publication/record-et-al-2023
+permalink: /publication/2023-12-01-The-surprising-oceanography-of-the-Gulf-of-Maine
 excerpt: "ABSTRACT: The oceanography of the Gulf of Maine has recently changed in ways that have not been seen previously, but that are likely to be more common in the future. Because of the rapid rate of change, some view the Gulf of Maine as a window into the ocean’s future with the idea that lessons learned can be applied in places that have yet to experience similar rapid changes. Based on a formal statistical definition of oceanographic surprises, the frequency of surprises in the Gulf of Maine is higher and has increased faster than expected even given underlying trends. The analysis suggests that we should expect new kinds of surprises that are characteristically different from previous ones. The implication for policymaking is that in addition to considering long-term environmental changes, it is important to consider scenarios of sudden, unexpected, and potentially extreme environmental changes."
 date: 2023-12-01
 venue: 'Maine Policy Review'
