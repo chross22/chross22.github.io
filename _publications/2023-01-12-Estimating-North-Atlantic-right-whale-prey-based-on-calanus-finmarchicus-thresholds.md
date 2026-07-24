@@ -6,10 +6,10 @@ excerpt: "ABSTRACT: The planktonic copepod <i>Calanus finmarchicus</i> is a fund
 10 000 copepods m^{−2}. The high-density aggregations of <i>C. finmarchicus</i> had some different covariate responses compared to previous statistical abundance models, such as a warmer temperature range at both the surface and at depth, as well as a much higher degree of spatial variability. The output data layers of the model are designed to link with <i>E. glacialis</i> models used in US governmental decision support tools. Including this type of foraging information in decision support tools is a step forward in managing this critically endangered species."
 date: 2023-01-12
 venue: 'Marine Ecology Progress Series'
-paperurl: 'http://chross22.github.io/files/paper3.pdf'
+paperurl: 'http://chross22.github.io/files/paper2.pdf'
 citation: '<b>Ross, C. H.</b>, Runge, J. A., Roberts, J. J., Brady, D. C., Tupper, B., and Record, N. R. 2023. Estimating North Atlantic right whale prey based on <i>Calanus finmarchicus</i> thresholds. <i>Marine Ecology Progress Series</i>, 703:1–16. https://doi.org/10.3354/meps14204.'
 ---
 
-[Download paper here](http://chross22.github.io/files/paper3.pdf)
+[Download paper here](http://chross22.github.io/files/paper2.pdf)
 
 Recommended citation: <b>Ross, C. H.</b>, Runge, J. A., Roberts, J. J., Brady, D. C., Tupper, B., and Record, N. R. 2023. Estimating North Atlantic right whale prey based on <i>Calanus finmarchicus</i> thresholds. <i>Marine Ecology Progress Series</i>, 703:1–16. https://doi.org/10.3354/meps14204.
