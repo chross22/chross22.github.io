@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Camille Ross"
+title                    : "Camille H. Ross"
 title_separator          : "-"
-name                     : &name "Camille Ross"
+name                     : &name "Camille H. Ross"
 description              : &description "personal description"
 github:
   repository_url.        : "https://chross22.github.io"
