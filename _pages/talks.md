@@ -1,7 +1,7 @@
 ---
 layout: list
 collection: talks
-title: "Talks"
+title: "Talks and workshops"
 permalink: /talks/
-lede: "Conference presentations, invited seminars, and workshops."
+lede: "Invited talks, contributed presentations and posters, and workshops — newest first."
 ---

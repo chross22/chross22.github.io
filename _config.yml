@@ -160,14 +160,15 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
-    permalink: /:collection/:path/
+    # No stub pages: these entries have no body, so a generated page would be
+    # empty. They render only in the lists on /teaching/ and /cv/.
+    output: false
   publications:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
-    permalink: /:collection/:path/
+    # No stub pages — see teaching above.
+    output: false
 
 
 # Defaults
@@ -182,16 +183,8 @@ defaults:
       type: publications
     values:
       layout: publication
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: entry
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: entry
+  # talks and teaching set output: false above — they render only inside the
+  # lists on /talks/, /teaching/, and /cv/, so they need no layout.
 
 # Sass/SCSS
 sass:

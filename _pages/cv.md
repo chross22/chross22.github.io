@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Curriculum vitae"
+title: "CV"
 permalink: /cv/
 redirect_from:
   - /resume
@@ -42,9 +42,11 @@ and in the southwestern Pacific Ocean
 
 ## Research and professional experience
 
-**Postdoctoral Research Associate** — Darling Marine Center, University of Maine,
-Walpole, ME · January 2026 – present
+**Darling Marine Center, University of Maine**, Walpole, ME · January 2026 – present
 In partnership with the Maine Department of Marine Resources, Marine Mammal Research Division.
+- *Postdoctoral Research Associate* (full time, June 2026 – present)
+- *Research Associate* (contract, January 2026 – June 2026)
+
 Analysis and integration of historical and ongoing datasets of large whales, zooplankton
 prey, and oceanographic variables collected under differing survey designs and sampling
 frequencies.

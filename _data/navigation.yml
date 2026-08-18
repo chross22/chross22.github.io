@@ -1,13 +1,16 @@
+# Nav labels must match each page's `title:` exactly — the nav is the site's
+# table of contents, so a tab that says one thing and lands on a page headed
+# another is just friction.
 main:
   - title: "Research"
     url: /research/
   - title: "Publications"
     url: /publications/
-  - title: "Code & Data"
+  - title: "Code and data"
     url: /code/
-  - title: "Talks"
+  - title: "Talks and workshops"
     url: /talks/
-  - title: "Teaching"
+  - title: "Teaching and outreach"
     url: /teaching/
   - title: "Media"
     url: /media/

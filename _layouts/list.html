@@ -3,7 +3,12 @@ layout: base
 ---
 {%- comment -%}
 Collection index for publications / talks / teaching.
-Reads page.collection, groups by year, delegates each row to the right include.
+
+One sorting rule for the whole site: named sections, and inside every section
+entries run newest first with the date shown inline on the entry. No year
+headings — the date is already on each row, and mixing year headings with
+kind headings (which publications need, and talks now need) was the thing that
+made these pages feel unrelated to each other.
 {%- endcomment -%}
 <div class="page-head">
   <h1>{{ page.title }}</h1>
@@ -15,21 +20,70 @@ Reads page.collection, groups by year, delegates each row to the right include.
 {%- assign docs = site[page.collection] | sort: "date" | reverse -%}
 
 {%- if page.collection == "publications" -%}
+
+  {%- assign journals = docs | where_exp: "d", "d.status != 'in-review'" | where: "type", "journal" -%}
+  {%- if journals.size > 0 %}
+  <h2 class="year">Peer-reviewed journal articles</h2>
+  {%- for p in journals %}{% include pub-item.html pub=p %}{% endfor %}
+  {%- endif %}
+
+  {%- assign reports = docs | where_exp: "d", "d.status != 'in-review'" | where: "type", "report" -%}
+  {%- if reports.size > 0 %}
+  <h2 class="year">Technical reports</h2>
+  {%- for p in reports %}{% include pub-item.html pub=p %}{% endfor %}
+  {%- endif %}
+
   {%- assign inreview = docs | where: "status", "in-review" -%}
   {%- if inreview.size > 0 %}
   <h2 class="year">In review</h2>
-  {%- for p in inreview %}{% include pub-item.html pub=p hide_status=true %}{% endfor %}
+  {%- for p in inreview %}{% include pub-item.html pub=p %}{% endfor %}
   {%- endif %}
-  {%- assign published = docs | where_exp: "d", "d.status != 'in-review'" -%}
-  {%- assign years = published | group_by_exp: "d", "d.date | date: '%Y'" -%}
-  {%- for y in years %}
-  <h2 class="year">{{ y.name }}</h2>
-  {%- for p in y.items %}{% include pub-item.html pub=p %}{% endfor %}
-  {%- endfor %}
+
+{%- elsif page.collection == "talks" -%}
+
+  {%- comment -%} Liquid cannot negate `contains`, so exclusions use `unless`
+  inside the loop and the counts are derived by subtraction. {%- endcomment -%}
+  {%- assign workshops   = docs | where_exp: "d", "d.type contains 'Workshop'" -%}
+  {%- assign invited_all = docs | where_exp: "d", "d.type contains 'Invited'" -%}
+  {%- assign contributed = docs | where_exp: "d", "d.type contains 'Contributed'" -%}
+  {%- assign invited_n   = invited_all.size | minus: workshops.size -%}
+
+  {%- if invited_n > 0 %}
+  <h2 class="year">Invited talks</h2>
+  {%- for e in invited_all %}{% unless e.type contains 'Workshop' %}{% include entry-item.html entry=e %}{% endunless %}{% endfor %}
+  {%- endif %}
+
+  {%- if contributed.size > 0 %}
+  <h2 class="year">Contributed presentations and posters</h2>
+  {%- for e in contributed %}{% include entry-item.html entry=e %}{% endfor %}
+  {%- endif %}
+
+  {%- if workshops.size > 0 %}
+  <h2 class="year">Workshops</h2>
+  {%- for e in workshops %}{% include entry-item.html entry=e %}{% endfor %}
+  {%- endif %}
+
+{%- elsif page.collection == "teaching" -%}
+
+  {%- assign mentoring  = docs | where_exp: "d", "d.type contains 'Mentoring'" -%}
+  {%- assign outreach   = docs | where_exp: "d", "d.type contains 'Outreach'" -%}
+  {%- assign teaching_n = docs.size | minus: outreach.size | minus: mentoring.size -%}
+
+  {%- if teaching_n > 0 %}
+  <h2 class="year">Teaching</h2>
+  {%- for e in docs %}{% unless e.type contains 'Outreach' or e.type contains 'Mentoring' %}{% include entry-item.html entry=e %}{% endunless %}{% endfor %}
+  {%- endif %}
+
+  {%- if outreach.size > 0 %}
+  <h2 class="year">Outreach</h2>
+  {%- for e in outreach %}{% include entry-item.html entry=e %}{% endfor %}
+  {%- endif %}
+
+  {%- if mentoring.size > 0 %}
+  <h2 class="year">Mentoring</h2>
+  {%- for e in mentoring %}{% include entry-item.html entry=e %}{% endfor %}
+  {%- endif %}
+
 {%- else -%}
-  {%- assign years = docs | group_by_exp: "d", "d.date | date: '%Y'" -%}
-  {%- for y in years %}
-  <h2 class="year">{{ y.name }}</h2>
-  {%- for e in y.items %}{% include entry-item.html entry=e %}{% endfor %}
-  {%- endfor %}
+  {%- for e in docs %}{% include entry-item.html entry=e %}{% endfor %}
 {%- endif -%}
