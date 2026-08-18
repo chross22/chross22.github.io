@@ -8,6 +8,12 @@
 #   - Colby College News returns 403 to automated fetches; the URL matches the
 #     exact headline on news.colby.edu.
 
+- date: 2026-02-13
+  outlet: "UMaine News"
+  kind: "Feature"
+  title: "Popular Science features UMaine alumna's right whale research"
+  url: "https://umaine.edu/news/2026/02/popular-science-features-umaine-alumnas-right-whale-research/"
+
 - date: 2026-02-06
   outlet: "Popular Science"
   kind: "Feature"
