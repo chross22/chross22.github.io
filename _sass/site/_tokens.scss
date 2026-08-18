@@ -96,7 +96,11 @@
   --selection:  rgba(127, 196, 217, 0.22);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { @include dark-tokens; }
-}
+// The site opens LIGHT for everyone, including visitors whose OS is set to
+// dark. That is deliberate — prefers-color-scheme is intentionally not
+// consulted. Dark is available only if a visitor asks for it via the toggle.
+// To follow the OS preference again, restore:
+//   @media (prefers-color-scheme: dark) {
+//     :root:not([data-theme="light"]) { @include dark-tokens; }
+//   }
 :root[data-theme="dark"] { @include dark-tokens; }

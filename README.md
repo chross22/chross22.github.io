@@ -126,6 +126,11 @@ contour motif instead. Set `photo: none` to remove the slot entirely.
 
 ## Design constraints worth preserving
 
+- **The site always opens light.** `prefers-color-scheme` is deliberately not
+  consulted, so a visitor whose OS is set to dark still gets the light theme.
+  Dark is available only if someone clicks the toggle. To follow the OS
+  preference again, restore the commented-out media query in
+  `_sass/site/_tokens.scss`.
 - **Colour never carries meaning on its own.** Every text colour clears 4.5:1 on
   both backgrounds, in both themes, under normal vision, protanopia,
   deuteranopia, tritanopia, and greyscale. `--accent` and `--link` are nearly
