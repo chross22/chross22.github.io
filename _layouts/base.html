@@ -18,8 +18,8 @@
     (function () {
       var root = document.documentElement;
       var btn = document.getElementById('theme-toggle');
-      // Default is light; the OS preference is deliberately not consulted.
-      function isDark() { return root.getAttribute('data-theme') === 'dark'; }
+      // Default is dark; the OS preference is deliberately not consulted.
+      function isDark() { return root.getAttribute('data-theme') !== 'light'; }
       function sync() { if (btn) btn.setAttribute('aria-pressed', String(isDark())); }
       sync();
       if (btn) btn.addEventListener('click', function () {

@@ -206,11 +206,12 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 .icon-btn:hover { color: var(--link); border-color: var(--link); }
 .icon-btn svg { width: 1rem; height: 1rem; }
 
-// Moon shown in light mode (click to go dark), sun shown in dark mode.
-// No prefers-color-scheme branch: the default state is always light.
-.icon-btn .i-sun  { display: none; }
-:root[data-theme="dark"] .icon-btn .i-sun  { display: block; }
-:root[data-theme="dark"] .icon-btn .i-moon { display: none; }
+// Sun shown in dark mode (click to go light), moon shown in light mode.
+// No prefers-color-scheme branch: the default state is always dark.
+.icon-btn .i-moon { display: none; }
+.icon-btn .i-sun  { display: block; }
+:root[data-theme="light"] .icon-btn .i-sun  { display: none; }
+:root[data-theme="light"] .icon-btn .i-moon { display: block; }
 
 // ---- social row ---------------------------------------------------------
 .social { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; }

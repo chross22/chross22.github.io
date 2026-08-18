@@ -96,11 +96,12 @@
   --selection:  rgba(127, 196, 217, 0.22);
 }
 
-// The site opens LIGHT for everyone, including visitors whose OS is set to
-// dark. That is deliberate — prefers-color-scheme is intentionally not
-// consulted. Dark is available only if a visitor asks for it via the toggle.
-// To follow the OS preference again, restore:
-//   @media (prefers-color-scheme: dark) {
-//     :root:not([data-theme="light"]) { @include dark-tokens; }
-//   }
-:root[data-theme="dark"] { @include dark-tokens; }
+// The site opens DARK for everyone, including visitors whose OS is set to
+// light. That is deliberate — prefers-color-scheme is intentionally not
+// consulted, so the look is the same for every first-time visitor. Light is
+// available only if a visitor asks for it via the toggle.
+//
+// The light tokens above stay on :root as the base layer; dark is applied over
+// them unless the visitor has explicitly chosen light. Both themes meet the
+// accessibility contract at the top of this file.
+:root:not([data-theme="light"]) { @include dark-tokens; }
