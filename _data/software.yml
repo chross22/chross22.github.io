@@ -1,5 +1,28 @@
-# Public R packages and analysis code, grouped into the order a project uses them.
-# `group` drives the headings on /code/. To add a package, copy a block.
+# Public R packages and analysis code.
+# `group` drives the headings on /code/, and groups appear in the order they
+# first occur below — so the leading entry sets the first heading on the page.
+# taupatch leads: it implements the method in Ross et al. (2023).
+# To add a package, copy a block.
+
+- name: "taupatch"
+  group: "Models"
+  language: "R"
+  status: "maintained"
+  summary: "Builds monthly habitat suitability models for high-abundance zooplankton patches
+    (\"tau-patches\"), where a patch is defined by a species-specific abundance threshold.
+    Point-and-click Shiny app or YAML-driven package."
+  repo: "https://github.com/chross22/taupatch"
+  paper: "/publication/2023-01-12-calanus-finmarchicus-thresholds"
+
+- name: "dsfit"
+  group: "Models"
+  language: "R"
+  status: "maintained"
+  summary: "Fits a set of candidate detection functions to line-transect distance data and
+    compares them on the quantities that actually matter for abundance — effective strip
+    half-width and its CV — rather than on AIC alone. Includes the gamma key that
+    Distance::ds() does not offer."
+  repo: "https://github.com/chross22/dsfit"
 
 - name: "narwcr"
   group: "Survey data"
@@ -36,35 +59,6 @@
     temporal gradients, time-integrated variables, calendar-unit lags, eddy kinetic energy,
     Lyapunov exponents, and distances to fronts and shore."
   repo: "https://github.com/chross22/derivoce"
-
-- name: "dsfit"
-  group: "Models"
-  language: "R"
-  status: "maintained"
-  summary: "Fits a set of candidate detection functions to line-transect distance data and
-    compares them on the quantities that actually matter for abundance — effective strip
-    half-width and its CV — rather than on AIC alone. Includes the gamma key that
-    Distance::ds() does not offer."
-  repo: "https://github.com/chross22/dsfit"
-
-- name: "taupatch"
-  group: "Models"
-  language: "R"
-  status: "maintained"
-  summary: "Builds monthly habitat suitability models for high-abundance zooplankton patches
-    (\"tau-patches\"), where a patch is defined by a species-specific abundance threshold.
-    Point-and-click Shiny app or YAML-driven package."
-  repo: "https://github.com/chross22/taupatch"
-  paper: "/publication/2023-01-12-calanus-finmarchicus-thresholds"
-
-- name: "msomgom"
-  group: "Models"
-  language: "R / JAGS"
-  status: "maintained"
-  summary: "Fits a dynamic multi-season colonization/persistence occupancy model to cetacean
-    vessel-survey sightings via JAGS, following MacKenzie et al. (2003). Config-driven data
-    cleaning, spatial gridding, environmental covariates, and diagnostics."
-  repo: "https://github.com/chross22/msomgom"
 
 - name: "fancyfx"
   group: "Visualization"

@@ -21,7 +21,6 @@ type: journal
 status: in-review
 featured: true
 excerpt: 'How the documented Gulf of Maine oceanographic regime shift propagates into model-derived North Atlantic right whale density estimates — and what that means for density surface models built across the shift.'
-citation: 'Ross, C. H., Roberts, J. J., Pendleton, D. E., Record, N. R., Ganley, L. C., O&#39;Brien, O., Brady, D. C. "Impacts of an oceanographic regime shift on U.S. North Atlantic right whale density estimates." <i>In review</i>.'
 ---
 
 <!-- TODO: replace with the submitted abstract. The date above is a sort key only;

@@ -214,3 +214,19 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 
 // ---- social row ---------------------------------------------------------
 .social { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; }
+
+// Install line on a package card. The point of /code/ is that these are
+// reusable by other people, so the command to get one is shown up front.
+.pkg__install {
+  margin-block: var(--sp-3) 0;
+  font-size: var(--fs-xs);
+  code {
+    display: inline-block;
+    padding: .15em .5em;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+    color: var(--text-2);
+    word-break: break-all;
+  }
+}

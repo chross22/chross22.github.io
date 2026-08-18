@@ -1,56 +1,60 @@
-# Press, interviews, and features.
-# Newest first. `url:` is optional — leave it blank and no link is rendered.
+# Press, interviews, and features. Newest first.
+# `url:` is optional — leave it blank and the title renders unlinked.
 #
-# TODO (Camille): add the URLs. They aren't in the CV, and guessing them risks
-# linking to the wrong article, so they're left blank rather than invented.
+# Every URL below was located and checked against the outlet, reporter, and
+# date. Two notes:
+#   - The World (2024) could not be confirmed from the segment page itself: it
+#     publishes a summary, not a transcript. Outlet, reporter, and date match.
+#   - Colby College News returns 403 to automated fetches; the URL matches the
+#     exact headline on news.colby.edu.
 
-- date: 2025-10-01
+- date: 2025-10-02
   outlet: "Vineyard Gazette"
   kind: "Print interview"
-  title: "New Tactics Could Be a Big Help in Tracking Right Whales"
-  url: ""
+  title: "New Tactic Could Be a Big Help in Tracking Right Whales"
+  url: "https://vineyardgazette.com/news/2025/10/02/new-tactic-could-be-big-help-tracking-right-whales"
 
-- date: 2025-09-01
+- date: 2025-09-20
   outlet: "CBC New Brunswick — <em>The Shift</em>"
   kind: "Radio interview"
   title: "New England scientists honing models that predict where right whales will pop up next"
   note: "with Vanessa Vander Valk"
-  url: ""
+  url: "https://www.cbc.ca/news/canada/new-brunswick/nb-right-whale-food-model-1.7638126"
 
-- date: 2025-09-01
-  outlet: "Nantucket Currents"
-  kind: "Print interview"
-  title: "Follow the Food: Scientists Devise New Strategy to Track Endangered Right Whales"
-  url: ""
-
-- date: 2025-09-01
-  outlet: "Oceanographic Magazine"
-  kind: "Feature"
-  title: "Tracking right whales the right way… by thinking small"
-  url: ""
-
-- date: 2025-09-01
+- date: 2025-09-16
   outlet: "NOAA Fisheries"
   kind: "Feature"
   title: "Where the Copepods Are: Prey Data Can Improve Right Whale Models"
-  url: ""
+  url: "https://www.fisheries.noaa.gov/feature-story/where-copepods-are-prey-data-can-improve-right-whale-models"
 
-- date: 2024-04-01
+- date: 2025-09-15
+  outlet: "Oceanographic Magazine"
+  kind: "Feature"
+  title: "Tracking right whales the right way… by thinking small"
+  url: "https://oceanographicmagazine.com/news/tracking-right-whales-the-right-way-by-thinking-small/"
+
+- date: 2025-09-12
+  outlet: "Nantucket Current"
+  kind: "Print interview"
+  title: "Follow the Food: Scientists Devise New Strategy to Track Endangered Right Whales"
+  url: "https://nantucketcurrent.com/news/follow-the-food-scientists-devise-new-strategy-to-track-endangered-right-whales"
+
+- date: 2024-04-25
   outlet: "The World (PRX)"
   kind: "Radio interview"
-  title: "Oceans are warming fast"
+  title: "Oceans heating up fast"
   note: "with Carolyn Beeler"
-  url: ""
+  url: "https://theworld.org/segments/2024/04/25/oceans-heating-up-fast"
 
 - date: 2022-03-01
   outlet: "News Center Maine"
   kind: "TV interview"
   title: "Climate change may be drawing right whales out of the Gulf of Maine"
   note: "with Don Carrigan"
-  url: ""
+  url: "https://www.newscentermaine.com/article/news/special-reports/maines-changing-climate/climate-change-is-pushing-food-source-for-endangered-north-atlantic-right-whale-further-out-to-sea/97-4a2bc7aa-e492-480e-81b8-87751412e242"
 
-- date: 2022-03-01
+- date: 2022-03-03
   outlet: "Colby College News"
   kind: "Print interview"
   title: "In Search of the North Atlantic Right Whale"
-  url: ""
+  url: "https://news.colby.edu/story/in-search-of-the-north-atlantic-right-whale/"

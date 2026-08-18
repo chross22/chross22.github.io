@@ -42,12 +42,18 @@ layout: base
 </section>
 
 <section class="section">
-  <h2 class="section__title">News
-    <a class="section__more" href="{{ '/news/' | relative_url }}">All news →</a>
+  <h2 class="section__title">In the media
+    <a class="section__more" href="{{ '/media/' | relative_url }}">All coverage →</a>
   </h2>
-  {%- assign items = site.data.news | sort: "date" | reverse -%}
+  {%- assign items = site.data.media | sort: "date" | reverse -%}
   <ul class="news">
-    {%- for item in items limit: 4 %}{% include news-item.html item=item %}{% endfor %}
+    {%- for m in items limit: 4 %}
+    <li>
+      <span class="news__date">{{ m.date | date: "%B %Y" }}</span>
+      {% if m.url and m.url != "" %}<a href="{{ m.url }}">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}
+      — {{ m.outlet }}{% if m.note %}, {{ m.note }}{% endif %}
+    </li>
+    {%- endfor %}
   </ul>
 </section>
 

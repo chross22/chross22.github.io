@@ -1,7 +1,0 @@
-{%- comment -%} One dated news line. include.item — an entry from _data/news.yml {%- endcomment -%}
-{%- assign n = include.item -%}
-<li>
-  <span class="news__date">{{ n.date | date: "%B %-d, %Y" }}</span>
-  {{ n.text | markdownify | remove: "<p>" | remove: "</p>" }}
-  {%- if n.url and n.url != "" %} <a href="{{ n.url | relative_url }}">{{ n.url_text | default: "More" }} →</a>{% endif -%}
-</li>
