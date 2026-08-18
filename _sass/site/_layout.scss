@@ -48,13 +48,15 @@ main { flex: 1 0 auto; padding-block: var(--sp-6) var(--sp-8); }
 .nav a:hover { color: var(--link); }
 .nav a[aria-current="page"] {
   color: var(--text);
+  font-weight: 600;              // third cue, so the state is not colour-only
   border-bottom-color: var(--accent);
 }
 
 // Mobile: nav collapses behind a disclosure button.
-.nav-toggle { display: none; }
+// .icon-btn is imported later and also sets display, so qualify with both classes.
+.icon-btn.nav-toggle { display: none; }
 @media (max-width: 47.99rem) {
-  .nav-toggle { display: inline-flex; }
+  .icon-btn.nav-toggle { display: inline-flex; }
   .nav {
     display: none;
     flex-basis: 100%;

@@ -18,7 +18,7 @@ Reads page.collection, groups by year, delegates each row to the right include.
   {%- assign inreview = docs | where: "status", "in-review" -%}
   {%- if inreview.size > 0 %}
   <h2 class="year">In review</h2>
-  {%- for p in inreview %}{% include pub-item.html pub=p %}{% endfor %}
+  {%- for p in inreview %}{% include pub-item.html pub=p hide_status=true %}{% endfor %}
   {%- endif %}
   {%- assign published = docs | where_exp: "d", "d.status != 'in-review'" -%}
   {%- assign years = published | group_by_exp: "d", "d.date | date: '%Y'" -%}

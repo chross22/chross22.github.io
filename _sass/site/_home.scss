@@ -14,7 +14,8 @@
 
 .hero__name {
   font-size: var(--fs-3xl);
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.005em;
   margin-bottom: var(--sp-3);
 }
 .hero__role {
@@ -49,5 +50,5 @@
 // No-photo fallback: nested bathymetric contours. Abstract, on-theme, and
 // unmistakably intentional rather than a missing image.
 .contours { display: block; width: 100%; height: auto; }
-.contours path { fill: none; stroke: var(--border); stroke-width: 1.25; }
-.contours path:nth-child(odd) { stroke: var(--link); opacity: 0.35; }
+.contours path { fill: none; stroke: var(--border); stroke-width: 1.25; stroke-linecap: round; }
+.contours path:nth-child(odd) { stroke: var(--link); opacity: 0.3; }
