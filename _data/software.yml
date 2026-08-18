@@ -20,7 +20,8 @@
   status: "maintained"
   summary: "Fits a set of candidate detection functions to line-transect distance data and
     compares them on the quantities that actually matter for abundance — effective strip
-    half-width and its CV — rather than on AIC alone. Includes the gamma key that
+    half-width and its coefficient of variation — rather than on the Akaike information
+    criterion alone. Includes the gamma key that
     Distance::ds() does not offer."
   repo: "https://github.com/chross22/dsfit"
 

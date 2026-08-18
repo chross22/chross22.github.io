@@ -67,7 +67,7 @@ somebody keeps sampling zooplankton.
 **Code:** [`narwcr`](https://github.com/chross22/narwcr) and
 [`distsamp`](https://github.com/chross22/distsamp) handle survey ingest and segmentation;
 [`dsfit`](https://github.com/chross22/dsfit) fits and compares detection functions on
-effective strip half-width rather than AIC alone.
+effective strip half-width rather than the Akaike information criterion alone.
 
 ## Where both are going {#change}
 

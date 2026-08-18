@@ -1,5 +1,5 @@
 ---
-title: "Teaching Assistant, REU Coding Hour"
+title: "Teaching Assistant, Research Experience for Undergraduates Coding Hour"
 collection: teaching
 type: "Teaching Assistant"
 permalink: /teaching/2020-06-01-teaching-assistant-reu-coding-hour

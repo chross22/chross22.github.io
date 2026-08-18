@@ -8,6 +8,13 @@
 #   - Colby College News returns 403 to automated fetches; the URL matches the
 #     exact headline on news.colby.edu.
 
+- date: 2026-02-06
+  outlet: "Popular Science"
+  kind: "Feature"
+  title: "The lobstermen teaming up with scientists to save endangered whales"
+  note: "by Valerie Shively"
+  url: "https://www.popsci.com/environment/lobstermen-scientists-protect-right-whales/"
+
 - date: 2025-10-02
   outlet: "Vineyard Gazette"
   kind: "Print interview"
