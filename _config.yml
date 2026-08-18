@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Camille H. Ross"
+title                    : "Camille H. Ross, Ph.D."
 tagline                  : "Quantitative Marine Ecologist"
 title_separator          : "-"
-name                     : &name "Camille H. Ross"
+name                     : &name "Camille H. Ross, Ph.D."
 description              : &description "Camille H. Ross is a quantitative marine ecologist modelling endangered North Atlantic right whales, their copepod prey, and how both shift as the Gulf of Maine warms."
 url                      : "https://chross22.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -81,7 +81,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Camille H. Ross"
+  name             : "Camille H. Ross, Ph.D."
   surname_initials : "Ross, C. H."   # used to bold her name in author lists
   job_title        : "Quantitative marine ecologist"
   affiliation      : "Darling Marine Center, University of Maine"
@@ -91,7 +91,7 @@ author:
   #   photo: "portrait.jpg"
   # Leave blank for the contour motif; set to "none" to drop the slot entirely.
   photo            :
-  lede             : "I build predictive models of endangered species and their habitats from sparse, irregular, effort-limited observations — separating what the survey saw from what is actually out there. Most of that work serves the critically endangered North Atlantic right whale and the copepods it depends on."
+  lede             : "Building predictive models of endangered species and their habitats from sparse, irregular, effort-limited observations — separating what the survey saw from what is actually out there. Most of that work serves the critically endangered North Atlantic right whale and the copepods it depends on."
   googlescholar    : "https://scholar.google.com/citations?user=3nb1r0AAAAAJ&hl=en"
   orcid            : "https://orcid.org/0000-0002-1428-2294"
   github_url       : "https://github.com/chross22"

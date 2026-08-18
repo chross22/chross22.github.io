@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /
-title: "Camille H. Ross"
+title: "Camille H. Ross, Ph.D."
 redirect_from:
   - /about/
   - /about.html
