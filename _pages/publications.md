@@ -1,16 +1,9 @@
 ---
-layout: archive
+layout: list
+collection: publications
 title: "Publications"
 permalink: /publications/
-author_profile: true
+lede: "Peer-reviewed articles, technical reports, and manuscripts in review."
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
-
-{% include base_path %}
-
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<p class="text-sm muted">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a> and <a href="{{ site.author.orcid }}">ORCID</a>.</p>

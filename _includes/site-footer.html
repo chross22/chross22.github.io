@@ -1,0 +1,19 @@
+{%- comment -%} Footer: affiliation, contact, social links. {%- endcomment -%}
+{%- assign a = site.author -%}
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <div>{{ a.name }} · {{ a.affiliation }}</div>
+      <div class="text-sm">
+        <a href="mailto:{{ a.email }}">{{ a.email }}</a>
+      </div>
+    </div>
+    <div class="social">
+      <a class="btn" href="{{ a.googlescholar }}" aria-label="Google Scholar">{% include icon.html name="scholar" %}</a>
+      <a class="btn" href="{{ a.orcid }}" aria-label="ORCID">{% include icon.html name="orcid" %}</a>
+      <a class="btn" href="{{ a.github_url }}" aria-label="GitHub">{% include icon.html name="github" %}</a>
+      <a class="btn" href="{{ a.linkedin }}" aria-label="LinkedIn">{% include icon.html name="linkedin" %}</a>
+      <a class="btn" href="{{ a.researchgate }}" aria-label="ResearchGate">{% include icon.html name="researchgate" %}</a>
+    </div>
+  </div>
+</footer>

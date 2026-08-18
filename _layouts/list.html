@@ -1,0 +1,35 @@
+---
+layout: base
+---
+{%- comment -%}
+Collection index for publications / talks / teaching.
+Reads page.collection, groups by year, delegates each row to the right include.
+{%- endcomment -%}
+<div class="page-head">
+  <h1>{{ page.title }}</h1>
+  {%- if page.lede %}<p class="page-head__lede">{{ page.lede }}</p>{% endif %}
+</div>
+
+{{ content }}
+
+{%- assign docs = site[page.collection] | sort: "date" | reverse -%}
+
+{%- if page.collection == "publications" -%}
+  {%- assign inreview = docs | where: "status", "in-review" -%}
+  {%- if inreview.size > 0 %}
+  <h2 class="year">In review</h2>
+  {%- for p in inreview %}{% include pub-item.html pub=p %}{% endfor %}
+  {%- endif %}
+  {%- assign published = docs | where_exp: "d", "d.status != 'in-review'" -%}
+  {%- assign years = published | group_by_exp: "d", "d.date | date: '%Y'" -%}
+  {%- for y in years %}
+  <h2 class="year">{{ y.name }}</h2>
+  {%- for p in y.items %}{% include pub-item.html pub=p %}{% endfor %}
+  {%- endfor %}
+{%- else -%}
+  {%- assign years = docs | group_by_exp: "d", "d.date | date: '%Y'" -%}
+  {%- for y in years %}
+  <h2 class="year">{{ y.name }}</h2>
+  {%- for e in y.items %}{% include entry-item.html entry=e %}{% endfor %}
+  {%- endfor %}
+{%- endif -%}

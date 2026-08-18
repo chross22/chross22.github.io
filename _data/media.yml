@@ -1,0 +1,56 @@
+# Press, interviews, and features.
+# Newest first. `url:` is optional — leave it blank and no link is rendered.
+#
+# TODO (Camille): add the URLs. They aren't in the CV, and guessing them risks
+# linking to the wrong article, so they're left blank rather than invented.
+
+- date: 2025-10-01
+  outlet: "Vineyard Gazette"
+  kind: "Print interview"
+  title: "New Tactics Could Be a Big Help in Tracking Right Whales"
+  url: ""
+
+- date: 2025-09-01
+  outlet: "CBC New Brunswick — <em>The Shift</em>"
+  kind: "Radio interview"
+  title: "New England scientists honing models that predict where right whales will pop up next"
+  note: "with Vanessa Vander Valk"
+  url: ""
+
+- date: 2025-09-01
+  outlet: "Nantucket Currents"
+  kind: "Print interview"
+  title: "Follow the Food: Scientists Devise New Strategy to Track Endangered Right Whales"
+  url: ""
+
+- date: 2025-09-01
+  outlet: "Oceanographic Magazine"
+  kind: "Feature"
+  title: "Tracking right whales the right way… by thinking small"
+  url: ""
+
+- date: 2025-09-01
+  outlet: "NOAA Fisheries"
+  kind: "Feature"
+  title: "Where the Copepods Are: Prey Data Can Improve Right Whale Models"
+  url: ""
+
+- date: 2024-04-01
+  outlet: "The World (PRX)"
+  kind: "Radio interview"
+  title: "Oceans are warming fast"
+  note: "with Carolyn Beeler"
+  url: ""
+
+- date: 2022-03-01
+  outlet: "News Center Maine"
+  kind: "TV interview"
+  title: "Climate change may be drawing right whales out of the Gulf of Maine"
+  note: "with Don Carrigan"
+  url: ""
+
+- date: 2022-03-01
+  outlet: "Colby College News"
+  kind: "Print interview"
+  title: "In Search of the North Atlantic Right Whale"
+  url: ""

@@ -1,0 +1,89 @@
+// Design tokens. Two layers on purpose:
+//   1. primitives  — named for what they ARE. Referenced only by layer 2.
+//   2. semantic    — named for what they DO. The ONLY tokens used elsewhere.
+// Dark mode therefore reassigns ~12 declarations and nothing else. If you ever
+// find yourself writing a raw hex value in a component file, add a token instead.
+
+:root {
+  // ---- primitives -------------------------------------------------------
+  --c-paper:      #fbfbf9;   // warm white, not clinical
+  --c-paper-2:    #f2f3f1;
+  --c-abyss:      #10171a;   // deep ocean, deliberately not pure black
+  --c-abyss-2:    #172227;
+  --c-ink:        #14201f;
+  --c-ink-2:      #4e5b59;
+  --c-bone:       #e7ebea;
+  --c-bone-2:     #9ba9ab;
+  --c-sea:        #1f5f73;   // cold North Atlantic
+  --c-sea-deep:   #14495a;
+  --c-sea-light:  #7fc4d9;
+  --c-sea-pale:   #a6dbea;
+  --c-copper:     #b4622c;   // used sparingly, for emphasis only
+  --c-copper-lt:  #e09a62;
+  --c-rule:       #dcdfdb;
+  --c-rule-dk:    #26343a;
+
+  // ---- semantic: light --------------------------------------------------
+  --bg:            var(--c-paper);
+  --surface:       var(--c-paper-2);
+  --text:          var(--c-ink);
+  --text-muted:    var(--c-ink-2);
+  --border:        var(--c-rule);
+  --link:          var(--c-sea);
+  --link-hover:    var(--c-sea-deep);
+  --accent:        var(--c-copper);
+  --focus:         var(--c-sea);
+  --code-bg:       var(--c-paper-2);
+  --selection:     rgba(31, 95, 115, 0.16);
+
+  // ---- type -------------------------------------------------------------
+  // System stacks only: zero network requests, no FOUT, nothing to self-host.
+  --font-display: Charter, "Bitstream Charter", "Iowan Old Style", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-xs:   0.8125rem;
+  --fs-sm:   0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-md:   1.1875rem;
+  --fs-lg:   1.4375rem;
+  --fs-xl:   1.8125rem;
+  --fs-2xl:  2.25rem;
+  --fs-3xl:  clamp(2.25rem, 1.6rem + 2.5vw, 3rem);
+
+  --lh-tight: 1.2;
+  --lh-snug:  1.35;
+  --lh-body:  1.65;
+
+  // ---- space (0.25rem base, 1.5 ratio) ----------------------------------
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;   --sp-3: 0.75rem;  --sp-4: 1rem;
+  --sp-5: 1.5rem;   --sp-6: 2.25rem;  --sp-7: 3.375rem; --sp-8: 5rem;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --measure: 66ch;
+  --page-max: 68rem;
+}
+
+// ---- semantic: dark -----------------------------------------------------
+// Order matters. The :not([data-theme="light"]) guard lets a manual "light"
+// choice win over a dark OS preference; the explicit block below lets a manual
+// "dark" choice win over a light OS preference.
+@mixin dark-tokens {
+  --bg:         var(--c-abyss);
+  --surface:    var(--c-abyss-2);
+  --text:       var(--c-bone);
+  --text-muted: var(--c-bone-2);
+  --border:     var(--c-rule-dk);
+  --link:       var(--c-sea-light);
+  --link-hover: var(--c-sea-pale);
+  --accent:     var(--c-copper-lt);
+  --focus:      var(--c-sea-light);
+  --code-bg:    var(--c-abyss-2);
+  --selection:  rgba(127, 196, 217, 0.22);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-tokens; }
+}
+:root[data-theme="dark"] { @include dark-tokens; }

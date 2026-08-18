@@ -1,0 +1,18 @@
+# The research threads. Shared by the homepage cards and the /research/ page,
+# so the two can never drift apart. `anchor` must match a section id in research.md.
+
+- anchor: prey
+  title: "Where the food is"
+  short: "Modelling the copepod patches right whales actually feed on — not average
+    abundance, but whether a patch clears the energetic bar that makes it worth eating."
+
+- anchor: density
+  title: "Where the whales are"
+  short: "Separating the observation process from the ecological one: detectability, survey
+    effort, and prey fields in place of chlorophyll proxies in the density surface models
+    managers rely on."
+
+- anchor: change
+  title: "Where both are going"
+  short: "Projecting foraging habitat under future climate scenarios, and measuring what a
+    documented oceanographic regime shift does to the density estimates built across it."

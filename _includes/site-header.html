@@ -1,0 +1,22 @@
+{%- comment -%} Masthead: name, nav, theme toggle, mobile disclosure. {%- endcomment -%}
+<header class="masthead" id="masthead">
+  <div class="container masthead__inner">
+    <a class="masthead__name" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+
+    <button class="icon-btn nav-toggle" type="button"
+            aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      {% include icon.html name="menu" %}
+    </button>
+
+    <button class="icon-btn" type="button" id="theme-toggle"
+            aria-pressed="false" aria-label="Switch between light and dark theme">
+      {% include icon.html name="sun" %}{% include icon.html name="moon" %}
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      {%- for item in site.data.navigation.main %}
+      <a href="{{ item.url | relative_url }}"{% if page.url contains item.url and item.url != "/" %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</header>

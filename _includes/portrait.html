@@ -1,0 +1,30 @@
+{%- comment -%}
+Portrait slot.
+  - site.author.photo set    → renders the photo
+  - site.author.photo "none" → renders nothing at all
+  - otherwise                → an abstract bathymetric-contour motif, so the
+                               homepage looks deliberate rather than broken
+                               while there is no headshot.
+To add a real photo later: drop the file in images/ and set author.photo in
+_config.yml. Nothing else changes.
+{%- endcomment -%}
+{%- assign photo = site.author.photo -%}
+{%- unless photo == "none" -%}
+<div class="hero__aside">
+  {%- if photo and photo != "" -%}
+    <img class="portrait" src="{{ photo | prepend: '/images/' | relative_url }}"
+         alt="{{ site.author.name }}" width="480" height="600">
+  {%- else -%}
+    <svg class="contours" viewBox="0 0 240 300" role="img"
+         aria-label="Abstract bathymetric contour lines">
+      <path d="M20 275 C60 250 60 210 120 205 C180 200 195 235 220 250"/>
+      <path d="M20 240 C65 215 70 180 120 174 C175 168 195 200 220 215"/>
+      <path d="M28 205 C70 183 80 150 120 143 C170 136 190 165 212 180"/>
+      <path d="M40 170 C76 152 90 122 120 113 C162 104 182 130 200 145"/>
+      <path d="M54 137 C84 122 98 96 120 84 C152 74 172 96 186 110"/>
+      <path d="M70 105 C92 93 104 72 120 56 C142 48 158 66 170 78"/>
+      <path d="M88 74 C102 64 110 48 120 30 C134 26 144 40 152 50"/>
+    </svg>
+  {%- endif -%}
+</div>
+{%- endunless -%}
