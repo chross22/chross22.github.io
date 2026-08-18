@@ -10,7 +10,10 @@ Interviews/Features buried the newest and most prominent coverage below six
 older interviews — and the kind is already tagged on every row, so the split
 bought nothing. Same rule as the other list pages: newest first, date inline.
 {%- endcomment -%}
-{%- assign items = site.data.media | sort: "date" | reverse -%}
+{%- assign all = site.data.media | sort: "date" | reverse -%}
+{%- assign pinned = all | where: "pin", true -%}
+{%- assign rest = all | where_exp: "m", "m.pin != true" -%}
+{%- assign items = pinned | concat: rest -%}
 {%- for m in items %}
 <div class="entry">
   <div class="entry__title">{% if m.url and m.url != "" %}<a href="{{ m.url }}">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}</div>

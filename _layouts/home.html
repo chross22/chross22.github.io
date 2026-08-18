@@ -37,7 +37,10 @@ layout: base
   <h2 class="section__title">Selected publications
     <a class="section__more" href="{{ '/publications/' | relative_url }}">All {{ site.publications.size }} →</a>
   </h2>
-  {%- assign featured = site.publications | where: "featured", true | sort: "date" | reverse -%}
+  {%- comment -%} Published work only — an in-review manuscript is not a
+    selected publication. It still appears on /publications/ under In review.
+    {%- endcomment -%}
+    {%- assign featured = site.publications | where: "featured", true | where_exp: "p", "p.status != 'in-review'" | sort: "date" | reverse -%}
   {%- for p in featured limit: 3 %}{% include pub-item.html pub=p style="compact" %}{% endfor %}
 </section>
 
@@ -45,7 +48,10 @@ layout: base
   <h2 class="section__title">In the media
     <a class="section__more" href="{{ '/media/' | relative_url }}">All coverage →</a>
   </h2>
-  {%- assign items = site.data.media | sort: "date" | reverse -%}
+  {%- assign all = site.data.media | sort: "date" | reverse -%}
+  {%- assign pinned = all | where: "pin", true -%}
+  {%- assign rest = all | where_exp: "m", "m.pin != true" -%}
+  {%- assign items = pinned | concat: rest -%}
   <ul class="news">
     {%- for m in items limit: 4 %}
     <li>

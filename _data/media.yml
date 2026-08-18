@@ -15,6 +15,9 @@
   url: "https://umaine.edu/news/2026/02/popular-science-features-umaine-alumnas-right-whale-research/"
 
 - date: 2026-02-06
+  # Pinned above the UMaine item, which is coverage *of* this feature and one
+  # week newer. `pin: true` floats an entry to the top; the date stays accurate.
+  pin: true
   outlet: "Popular Science"
   kind: "Feature"
   title: "The lobstermen teaming up with scientists to save endangered whales"
