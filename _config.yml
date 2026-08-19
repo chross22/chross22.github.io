@@ -90,7 +90,12 @@ author:
   # Add a headshot by dropping the file in images/ and naming it here, e.g.
   #   photo: "portrait.jpg"
   # Leave blank for the contour motif; set to "none" to drop the slot entirely.
-  photo            :
+  # "none" renders no portrait slot at all. The abstract contour motif existed
+  # to stop the hero looking empty when there was no photograph; the whale
+  # banner above the hero does that job now, and the motif only left ~220px of
+  # dead space beside a shortened hero. To show a real portrait, put the file
+  # in images/ and replace "none" with its filename.
+  photo            : "none"
   lede             : "Building predictive models of endangered species and their habitats from sparse, irregular, effort-limited observations — separating what the survey saw from what is actually out there. Most of that work serves the critically endangered North Atlantic right whale and the copepods it depends on."
   googlescholar    : "https://scholar.google.com/citations?user=3nb1r0AAAAAJ&hl=en"
   orcid            : "https://orcid.org/0000-0002-1428-2294"

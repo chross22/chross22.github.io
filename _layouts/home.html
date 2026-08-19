@@ -7,7 +7,6 @@ layout: base
   <div>
     <h1 class="hero__name">{{ a.name }}</h1>
     <p class="hero__role">{{ a.job_title }} · {{ a.affiliation }}</p>
-    <p class="hero__lede">{{ a.lede }}</p>
     <div class="social">
       <a class="btn btn--primary" href="{{ site.cv_pdf | relative_url }}">{% include icon.html name="download" %} CV (PDF)</a>
       <a class="btn" href="mailto:{{ a.email }}">{% include icon.html name="email" %} Email</a>
@@ -20,20 +19,12 @@ layout: base
   {% include portrait.html %}
 </section>
 
-
 <section class="section">
-  <h2 class="section__title">Research
-    <a class="section__more" href="{{ '/research/' | relative_url }}">Read more →</a>
-  </h2>
-  <div class="cards">
-    {%- for thread in site.data.research %}
-    <div class="card">
-      <h3 class="card__title"><a href="{{ '/research/' | relative_url }}#{{ thread.anchor }}">{{ thread.title }}</a></h3>
-      <p>{{ thread.short }}</p>
-    </div>
-    {%- endfor %}
+  <div class="prose">
+    {{ content }}
   </div>
 </section>
+
 
 <section class="section">
   <h2 class="section__title">Selected publications
@@ -63,11 +54,4 @@ layout: base
     </li>
     {%- endfor %}
   </ul>
-</section>
-
-<section class="section">
-  <h2 class="section__title">About</h2>
-  <div class="prose">
-    {{ content }}
-  </div>
 </section>
