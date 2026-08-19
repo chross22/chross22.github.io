@@ -1,4 +1,13 @@
+---
+layout: none
+# `layout: none` is required. The site's defaults apply `layout: page` to every
+# page, and with front matter present this file counts as one — without it,
+# robots.txt is served as a full HTML document and crawlers get nothing.
+#
+# Front matter is still needed so the sitemap line follows site.url rather than
+# being hardcoded; it pointed at the old github.io host after the domain move.
+---
 User-agent: *
 Allow: /
 
-Sitemap: https://chross22.github.io/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
