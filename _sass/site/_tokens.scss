@@ -36,6 +36,20 @@
   --c-rule:       #e3e5e0;
   --c-rule-dk:    #35403f;
 
+  // ---- ocean ramp -------------------------------------------------------
+  // Single-hue sequential scale for the schematic figures on /code/, built
+  // from the same North Atlantic teal as --c-sea. Steps run from nearest the
+  // surface (low) to furthest from it (high).
+  //
+  // Validated, not eyeballed: monotone OKLCH lightness, min adjacent dL
+  // 0.102, hue spread 5.4 deg, every step >= 2:1 on this surface (2.12,
+  // 3.12, 5.00, 10.20). A five-step version failed the dL floor at 0.048,
+  // so it is four steps deliberately.
+  --ocean-1: #6bb3c9;
+  --ocean-2: #4e93a6;
+  --ocean-3: #35707f;
+  --ocean-4: #163f4c;
+
   // ---- semantic: light --------------------------------------------------
   --bg:            var(--c-paper);
   --surface:       var(--c-paper-2);
@@ -94,6 +108,15 @@
   --focus:      var(--c-sea-light);
   --code-bg:    var(--c-abyss-2);
   --selection:  rgba(127, 196, 217, 0.22);
+
+  // Ocean ramp re-stepped for the dark surface, not flipped: low still means
+  // "nearest the surface", which here is the darker teal. Validated on
+  // #263033 — min adjacent dL 0.078, every step >= 2:1 (3.89, 6.95, 8.98,
+  // 11.54).
+  --ocean-1: #4e93a6;
+  --ocean-2: #7fc4d9;
+  --ocean-3: #a6dbea;
+  --ocean-4: #dff0f5;
 }
 
 // The site opens DARK for everyone, including visitors whose OS is set to
