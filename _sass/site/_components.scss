@@ -243,7 +243,9 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 // 100%) is deliberate; the small horizontal-scrollbar risk is handled by
 // overflow-x: clip on the figure.
 .banner {
-  margin: 0 0 var(--sp-7);
+  // 54px here plus the hero's 36px of padding put 91px between the caption and
+  // the name — a bigger break than the one between whole sections.
+  margin: 0 0 var(--sp-4);
   width: 100vw;
   margin-inline: calc(50% - 50vw);
   overflow-x: clip;
@@ -278,7 +280,8 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   width: 100%;
   max-width: var(--page-max);
   margin-inline: auto;
-  padding: var(--sp-2) var(--sp-5) 0;
+  // Bottom padding keeps the credit off the rule beneath it.
+  padding: var(--sp-2) var(--sp-5) var(--sp-3);
   font-size: var(--fs-xs);
   font-style: italic;
   color: var(--text-muted);
