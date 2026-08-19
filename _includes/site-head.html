@@ -6,7 +6,13 @@
 
 {% include site-seo.html %}
 
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+{%- comment -%}
+The version string busts the browser cache on every build. Without it a
+visitor can hold an old site.css against new markup — and when the CSS
+defines custom properties the markup relies on, an undefined var() in an SVG
+fill silently renders black rather than falling back.
+{%- endcomment -%}
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 
