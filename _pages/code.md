@@ -37,5 +37,6 @@ remotes::install_github("chross22/taupatch")
 
 ## Skills
 
-R · Python · MATLAB · Java · git · bash / Unix shell · Linux · SQL · ArcGIS ·
-R Shiny · Leaflet · JAGS · targets pipelines
+**Expertise:** R · Python · git · bash / Unix shell · Linux
+**Experience:** MATLAB · Java · ArcGIS · R Shiny · Leaflet
+**Limited experience:** JavaScript · HTML · CSS · SQL
