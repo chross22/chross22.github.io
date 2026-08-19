@@ -44,12 +44,12 @@ and time.
 
 **Key papers:** [Estimating right whale prey based on *Calanus
 finmarchicus* thresholds]({{
-'/publication/2023-01-12-calanus-finmarchicus-thresholds' \|
+'/publication/2023-01-12-calanus-finmarchicus-thresholds' |
 relative_url }}) · [Beyond *Calanus*: changes to the copepod
 community]({{ '/publication/2025-01-09-beyond-calanus-copepod-community'
-\| relative_url }}) · [*Calanus* prey and foraging habitat in Canadian
+| relative_url }}) · [*Calanus* prey and foraging habitat in Canadian
 waters]({{
-'/publication/2024-08-01-calanus-energetics-foraging-habitat-models' \|
+'/publication/2024-08-01-calanus-energetics-foraging-habitat-models' |
 relative_url }})
 
 **Code:** [`taupatch`](https://github.com/chross22/taupatch) implements
@@ -80,10 +80,10 @@ both whales and zooplankton.
 
 **Key papers:** [Incorporating prey fields into right whale density
 surface models]({{
-'/publication/2025-09-11-prey-fields-density-surface-models' \|
+'/publication/2025-09-11-prey-fields-density-surface-models' |
 relative_url }}) · [Impacts of an oceanographic regime shift on U.S.
 right whale density estimates]({{
-'/publication/2026-regime-shift-right-whale-density-estimates' \|
+'/publication/2026-regime-shift-right-whale-density-estimates' |
 relative_url }}) *(in review)*
 
 **Code:** [`narwcr`](https://github.com/chross22/narwcr) and
@@ -114,11 +114,11 @@ regimes, when the relationship the model learned no longer holds? This
 is the underlying question of much of my current work.
 
 **Key papers:** [Projecting right whale habitat suitability for 2050]({{
-'/publication/2021-04-28-projecting-right-whale-habitat-2050' \|
+'/publication/2021-04-28-projecting-right-whale-habitat-2050' |
 relative_url }}) · [Foraging habitat under future climate scenarios]({{
-'/publication/2025-05-20-right-whale-foraging-habitat-climate' \|
+'/publication/2025-05-20-right-whale-foraging-habitat-climate' |
 relative_url }}) · [The surprising oceanography of the Gulf of Maine]({{
-'/publication/2023-01-01-gulf-of-maine-oceanography' \| relative_url }})
+'/publication/2023-01-01-gulf-of-maine-oceanography' | relative_url }})
 
 ## Methods and tools
 
