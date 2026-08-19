@@ -19,10 +19,41 @@ layout: base
   {% include portrait.html %}
 </section>
 
-<section class="section">
+{%- comment -%}
+About text with a facts panel in the right gutter. Every number is counted
+from the collections at build time rather than typed, so the panel cannot
+drift out of date when a paper, package, or talk is added.
+{%- endcomment -%}
+{%- assign published   = site.publications | where_exp: "p", "p.status != 'in-review'" -%}
+{%- assign inreview    = site.publications | where: "status", "in-review" -%}
+{%- assign invited_all = site.talks | where_exp: "t", "t.type contains 'Invited'" -%}
+<section class="section intro">
   <div class="prose">
     {{ content }}
   </div>
+
+  <aside class="facts" aria-label="At a glance">
+    <h2 class="facts__title">At a glance</h2>
+    <dl>
+      <dt>Position</dt>
+      <dd>{{ site.author.job_title }}, {{ site.author.affiliation }}</dd>
+
+      <dt>Ph.D.</dt>
+      <dd>Oceanography, University of Maine, 2025</dd>
+
+      <dt>Peer-reviewed publications</dt>
+      <dd><a href="{{ '/publications/' | relative_url }}">{{ published.size }}</a>{% if inreview.size > 0 %}, plus {{ inreview.size }} in review{% endif %}</dd>
+
+      <dt>Open-source R packages</dt>
+      <dd><a href="{{ '/code/' | relative_url }}">{{ site.data.software.size }}</a>, installable and documented</dd>
+
+      <dt>Talks and workshops</dt>
+      <dd><a href="{{ '/talks/' | relative_url }}">{{ site.talks.size }}</a>, {{ invited_all.size }} of them invited</dd>
+
+      <dt>Teaching and outreach</dt>
+      <dd><a href="{{ '/teaching/' | relative_url }}">{{ site.teaching.size }}</a> lectures, tutorials, and public talks</dd>
+    </dl>
+  </aside>
 </section>
 
 

@@ -286,3 +286,52 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 @media (min-width: 40rem) {
   .banner__caption { padding-inline: var(--sp-6); }
 }
+
+// ---- intro: About text plus a facts panel -------------------------------
+// At wide widths the prose stops at its reading measure and leaves ~400px of
+// empty gutter. The panel fills it with counted facts rather than decoration.
+// Below --bp-lg it drops under the prose instead of squeezing both.
+.intro {
+  display: grid;
+  gap: var(--sp-7);
+  align-items: start;
+}
+@media (min-width: 64rem) {
+  .intro { grid-template-columns: minmax(0, 1fr) 19rem; gap: var(--sp-8); }
+}
+
+.facts {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+}
+
+.facts__title {
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.facts dl { margin: 0; }
+
+.facts dt {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.facts dd {
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+}
+.facts dd:last-child { margin-bottom: 0; }
+
+// The count is the thing being scanned for, so give it weight — not colour,
+// which would not survive greyscale or dichromatic vision.
+.facts dd > a {
+  font-weight: 650;
+}
