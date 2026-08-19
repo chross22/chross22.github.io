@@ -12,7 +12,11 @@ tagline                  : "Quantitative Marine Ecologist"
 title_separator          : "-"
 name                     : &name "Camille H. Ross, Ph.D."
 description              : &description "Camille H. Ross is a quantitative marine ecologist modelling endangered North Atlantic right whales, their copepod prey, and how both shift as the Gulf of Maine warms."
-url                      : "https://chross22.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+# Canonical origin. This feeds every absolute URL the site emits — the
+# canonical link, Open Graph tags, the Atom feed, and the Google Scholar
+# citation_pdf_url tags. It must match the CNAME file at the repo root, or
+# Scholar will advertise PDFs at a host that no longer serves them.
+url                      : "https://camilleross.org"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chross22/chross22.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -112,6 +116,8 @@ include:
   - _pages
   - files
 exclude:
+  - bin            # local build/serve helpers; nothing to serve
+  - _photo-originals   # full-res PNG archive, kept in the repo but not published
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
