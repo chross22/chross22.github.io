@@ -1,0 +1,51 @@
+{%- comment -%}
+One publication row.
+  include.pub   — the publication document
+  include.style — "list" (default) | "compact" (homepage) | "cv"
+Owns the "bold her name" rule and the generated citation, so both are defined
+exactly once for the index, the homepage, the detail page, and the CV.
+{%- endcomment -%}
+{%- assign p = include.pub -%}
+{%- assign style = include.style | default: "list" -%}
+{%- assign me = site.author.surname_initials -%}
+
+<div class="pub{% if style == 'compact' %} pub--compact{% elsif style == 'cv' %} pub--cv{% endif %}">
+  <div class="pub__title">
+    <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+    {%- if p.status == "in-review" and include.hide_status != true %} <span class="badge">In review</span>{% endif -%}
+    {%- if p.type == "report" %} <span class="badge">Report</span>{% endif -%}
+  </div>
+
+  <div class="pub__authors">
+    {%- for author in p.authors -%}
+      {%- if author == me -%}<span class="me">{{ author }}</span>{%- else -%}{{ author }}{%- endif -%}
+      {%- unless forloop.last %}, {% endunless -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="pub__venue">
+    {%- if p.status == "in-review" -%}
+      {%- comment -%} no venue yet; the badge already carries the status {%- endcomment -%}
+    {%- else -%}
+      {%- if p.venue and p.venue != "" %}<em>{{ p.venue }}</em>{% endif -%}
+      {%- if p.volume and p.volume != "" %}, {{ p.volume }}{% endif -%}
+      {%- if p.issue and p.issue != "" %}({{ p.issue }}){% endif -%}
+      {%- if p.pages and p.pages != "" %}, {{ p.pages }}{% endif -%}
+      {{ p.date | date: " (%Y)" }}
+    {%- endif -%}
+  </div>
+
+  {%- if style != "cv" %}
+  <div class="btn-row">
+    {%- if p.doi and p.doi != "" %}
+    <a class="btn" href="https://doi.org/{{ p.doi }}">{% include icon.html name="link" %} DOI</a>
+    {%- elsif p.url_external and p.url_external != "" %}
+    <a class="btn" href="{{ p.url_external }}">{% include icon.html name="link" %} Publisher</a>
+    {%- endif %}
+    {%- if p.pdf and p.pdf != "" %}
+    <a class="btn" href="{{ p.pdf | relative_url }}">{% include icon.html name="download" %} PDF</a>
+    {%- endif %}
+    <a class="btn" href="{{ p.url | relative_url }}">{% include icon.html name="doc" %} Abstract</a>
+  </div>
+  {%- endif %}
+</div>

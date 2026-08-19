@@ -1,0 +1,24 @@
+{%- comment -%} <head> contents: metadata, stylesheet, icons, theme bootstrap. {%- endcomment -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1d2528">
+
+
+{% include site-seo.html %}
+
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+
+{%- comment -%}
+  MUST stay inline and synchronous. A deferred or external script here paints
+  the light theme first and then repaints — a visible flash for dark-mode users.
+{%- endcomment -%}
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>

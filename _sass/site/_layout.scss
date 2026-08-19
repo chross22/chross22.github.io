@@ -1,0 +1,114 @@
+// Page frame: container, masthead, nav, footer.
+
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--sp-5);
+}
+@media (min-width: 40rem) { .container { padding-inline: var(--sp-6); } }
+
+main { flex: 1 0 auto; padding-block: var(--sp-6) var(--sp-8); }
+
+// ---- masthead -----------------------------------------------------------
+.masthead {
+  border-bottom: 1px solid var(--border);
+  padding-block: var(--sp-4);
+}
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+.masthead__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+}
+.masthead__name:hover { color: var(--link); }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  font-size: var(--fs-sm);
+}
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding-block: var(--sp-1);
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { color: var(--link); }
+.nav a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 600;              // third cue, so the state is not colour-only
+  border-bottom-color: var(--accent);
+}
+
+// Mobile: nav collapses behind a disclosure button.
+// .icon-btn is imported later and also sets display, so qualify with both classes.
+.icon-btn.nav-toggle { display: none; }
+@media (max-width: 47.99rem) {
+  .icon-btn.nav-toggle { display: inline-flex; }
+  .nav {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+    padding-top: var(--sp-4);
+  }
+  .masthead[data-nav-open="true"] .nav { display: flex; }
+}
+
+// ---- footer -------------------------------------------------------------
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--sp-6);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4) var(--sp-6);
+  align-items: center;
+  justify-content: space-between;
+}
+.footer a { color: var(--text-muted); }
+.footer a:hover { color: var(--link); }
+
+// ---- generic page header ------------------------------------------------
+.page-head { margin-bottom: var(--sp-6); }
+.page-head__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  color: var(--text-muted);
+  max-width: var(--measure);
+  margin-top: var(--sp-3);
+}
+
+.section + .section { margin-top: var(--sp-7); }
+.section__title {
+  font-size: var(--fs-lg);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--sp-5);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+.section__more {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  white-space: nowrap;
+}

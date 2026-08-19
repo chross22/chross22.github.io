@@ -1,22 +1,18 @@
-# main links links
+# Nav labels must match each page's `title:` exactly — the nav is the site's
+# table of contents, so a tab that says one thing and lands on a page headed
+# another is just friction.
 main:
+  - title: "Research"
+    url: /research/
   - title: "Publications"
     url: /publications/
-
-  - title: "Talks"
-    url: /talks/    
-
-  - title: "Teaching and Outreach"
-    url: /teaching/    
-    
-  # - title: "Portfolio"
-  #   url: /portfolio/
-        
-  # - title: "Blog Posts"
-  #   url: /year-archive/
-    
+  - title: "Code and data"
+    url: /code/
+  - title: "Talks and workshops"
+    url: /talks/
+  - title: "Teaching and outreach"
+    url: /teaching/
+  - title: "Media"
+    url: /media/
   - title: "CV"
     url: /cv/
-    
-  - title: "Guide"
-    url: /markdown/

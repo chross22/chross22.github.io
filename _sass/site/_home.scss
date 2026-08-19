@@ -1,0 +1,54 @@
+// Homepage-only composition. Designed to look deliberate with NO portrait,
+// and to absorb one cleanly the moment author.photo is set in _config.yml.
+
+.hero {
+  display: grid;
+  gap: var(--sp-6);
+  align-items: start;
+  padding-block: var(--sp-6) var(--sp-7);
+  border-bottom: 1px solid var(--border);
+}
+@media (min-width: 48rem) {
+  .hero--with-aside { grid-template-columns: minmax(0, 1fr) 15rem; }
+}
+
+.hero__name {
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin-bottom: var(--sp-3);
+}
+.hero__role {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+.hero__lede {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  max-width: 54ch;
+  margin-bottom: var(--sp-5);
+}
+
+// The aside is decorative-only below 48rem, so it is hidden rather than
+// stacked — a lone abstract box above the fold on mobile reads as an error.
+.hero__aside { display: none; }
+@media (min-width: 48rem) { .hero__aside { display: block; } }
+
+.portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: var(--surface);
+}
+
+// No-photo fallback: nested bathymetric contours. Abstract, on-theme, and
+// unmistakably intentional rather than a missing image.
+.contours { display: block; width: 100%; height: auto; }
+.contours path { fill: none; stroke: var(--border); stroke-width: 1.25; stroke-linecap: round; }
+.contours path:nth-child(odd) { stroke: var(--link); opacity: 0.3; }

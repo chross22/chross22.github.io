@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ site.locale | default: 'en' }}">
+<head>
+{% include site-head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  {% include site-header.html %}
+  <main id="content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+  {% include site-footer.html %}
+
+  <script>
+    // Theme toggle + mobile nav. ~1 KB, inline, no dependencies.
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      // Default is dark; the OS preference is deliberately not consulted.
+      function isDark() { return root.getAttribute('data-theme') !== 'light'; }
+      function sync() { if (btn) btn.setAttribute('aria-pressed', String(isDark())); }
+      sync();
+      if (btn) btn.addEventListener('click', function () {
+        var next = isDark() ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        sync();
+      });
+
+      var navBtn = document.querySelector('.nav-toggle');
+      var head = document.getElementById('masthead');
+      if (navBtn && head) navBtn.addEventListener('click', function () {
+        var open = head.getAttribute('data-nav-open') === 'true';
+        head.setAttribute('data-nav-open', String(!open));
+        navBtn.setAttribute('aria-expanded', String(!open));
+      });
+    })();
+  </script>
+</body>
+</html>

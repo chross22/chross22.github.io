@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Build the site into _site/ exactly the way GitHub Pages will.
+# --safe mirrors the Pages sandbox, so a clean run here means a clean deploy.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"
+export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+exec bundle exec jekyll build --safe "$@"

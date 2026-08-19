@@ -1,0 +1,32 @@
+# Photo sequence rendered as a full-bleed banner under the masthead.
+# Frames show in the order listed, which is the order Camille asked for:
+# the third exposure of the burst (IMG_0434) sits second.
+#
+# Filenames are flukeslap-N.jpg and match display order. Earlier names were
+# retired rather than reused: re-pointing an existing image path at different
+# bytes means browsers that cached the old one keep serving it.
+#
+# Full-resolution PNG originals are archived in _photo-originals/ — Jekyll
+# ignores underscore-prefixed directories, so they are kept but never served.
+
+enabled: true
+
+credit: "Photographs by Camille H. Ross"
+# No caption: the frames read on their own, and each is described in its `alt`
+# for anyone who cannot see them.
+# Add `where:` to show a place and year, e.g. "Stellwagen Bank, 2015"
+where: ""
+
+frames:
+  - file: "flukeslap-1.jpg"
+    alt: "A humpback whale's fluke held high above the sea, the white underside
+      angled towards the camera, water still streaming from its trailing edge."
+  - file: "flukeslap-2.jpg"
+    alt: "The fluke swung across and up, one lobe reaching beyond the top of the
+      frame, the tail stock curved hard over the water."
+  - file: "flukeslap-3.jpg"
+    alt: "The fluke upright and fully spread, both lobes clear of the water, the
+      tail stock rising vertically from a patch of turquoise water."
+  - file: "flukeslap-4.jpg"
+    alt: "The fluke has gone; a wall of white spray stands where it struck the
+      surface and a wave rolls outward across the swell."

@@ -1,0 +1,28 @@
+{%- comment -%}
+Photo sequence as a full-bleed banner directly under the masthead.
+
+Full width and four frames across means each frame lands at very close to its
+own 3:2 aspect, so nothing is cropped and the horizons sit where the camera put
+them. Renders nothing unless _data/sequence.yml sets enabled: true, so missing
+files can never show as broken images.
+{%- endcomment -%}
+{%- assign seq = site.data.sequence -%}
+{%- if seq.enabled and seq.frames.size > 0 -%}
+<figure class="banner">
+  <div class="banner__strip" style="--frames: {{ seq.frames.size }}">
+    {%- for f in seq.frames %}
+    <img class="banner__frame"
+         src="{{ f.file | prepend: '/images/' | relative_url }}"
+         alt="{{ f.alt | strip_newlines }}"
+         width="960" height="639"
+         {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+         decoding="async">
+    {%- endfor %}
+  </div>
+  {%- if seq.credit and seq.credit != "" %}
+  <figcaption class="banner__caption">
+    {{ seq.credit }}{% if seq.where and seq.where != "" %} · {{ seq.where }}{% endif %}
+  </figcaption>
+  {%- endif %}
+</figure>
+{%- endif -%}

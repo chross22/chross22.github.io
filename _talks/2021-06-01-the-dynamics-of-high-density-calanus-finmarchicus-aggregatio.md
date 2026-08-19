@@ -5,5 +5,5 @@ type: "Contributed Presentation"
 permalink: /talks/2021-06-01-the-dynamics-of-high-density-calanus-finmarchicus-aggregatio
 venue: "Aquatic Sciences Meeting"
 date: 2021-06-01
-location: ""
+location: "Remote"
 ---

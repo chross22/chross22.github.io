@@ -1,0 +1,24 @@
+// The CV should print to something you'd actually hand someone.
+@media print {
+  .masthead, .footer, .icon-btn, .skip-link, .btn-row, .nav-toggle { display: none !important; }
+  :root {
+    --bg: #fff; --surface: #fff; --text: #000; --text-muted: #333;
+    --border: #bbb; --link: #000; --accent: #000;
+  }
+  body { font-size: 10.5pt; line-height: 1.4; }
+  main { padding-block: 0; }
+  .container { max-width: none; padding: 0; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 13pt; margin-top: 14pt; }
+  h3 { font-size: 11pt; }
+  a { text-decoration: none; }
+  // Expand link targets, but not for internal anchors (noise on paper).
+  .prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #555;
+    word-break: break-all;
+  }
+  .pub, .entry, .pkg, .card, figure { break-inside: avoid; page-break-inside: avoid; }
+  h2, h3 { break-after: avoid; page-break-after: avoid; }
+}

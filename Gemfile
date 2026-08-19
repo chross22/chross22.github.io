@@ -16,12 +16,20 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
-
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   # gem "jekyll-archives"
   gem "jekyll-feed"
   gem 'jekyll-sitemap'
-  gem 'hawkins'
 end
+
+# --- local build only ---------------------------------------------------
+# GitHub Pages ignores this Gemfile and builds with its own pinned gem set,
+# so nothing here affects the deployed site. These are stdlib gems that Ruby
+# 3.4+ unbundled but Jekyll 3.9 (the version Pages pins) still requires.
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"
+gem "ostruct"
+gem "webrick"

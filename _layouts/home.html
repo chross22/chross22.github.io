@@ -1,0 +1,57 @@
+---
+layout: base
+---
+{%- assign a = site.author -%}
+{% include sequence.html %}
+<section class="hero{% unless a.photo == 'none' %} hero--with-aside{% endunless %}">
+  <div>
+    <h1 class="hero__name">{{ a.name }}</h1>
+    <p class="hero__role">{{ a.job_title }} · {{ a.affiliation }}</p>
+    <div class="social">
+      <a class="btn btn--primary" href="{{ site.cv_pdf | relative_url }}">{% include icon.html name="download" %} CV (PDF)</a>
+      <a class="btn" href="mailto:{{ a.email }}">{% include icon.html name="email" %} Email</a>
+      <a class="btn" href="{{ a.googlescholar }}">{% include icon.html name="scholar" %} Scholar</a>
+      <a class="btn" href="{{ a.orcid }}">{% include icon.html name="orcid" %} ORCID</a>
+      <a class="btn" href="{{ a.github_url }}">{% include icon.html name="github" %} GitHub</a>
+      <a class="btn" href="{{ a.linkedin }}">{% include icon.html name="linkedin" %} LinkedIn</a>
+    </div>
+  </div>
+  {% include portrait.html %}
+</section>
+
+<section class="section">
+  <div class="prose">
+    {{ content }}
+  </div>
+</section>
+
+
+<section class="section">
+  <h2 class="section__title">Selected publications
+    <a class="section__more" href="{{ '/publications/' | relative_url }}">All {{ site.publications.size }} →</a>
+  </h2>
+  {%- comment -%} Published work only — an in-review manuscript is not a
+    selected publication. It still appears on /publications/ under In review.
+    {%- endcomment -%}
+    {%- assign featured = site.publications | where: "featured", true | where_exp: "p", "p.status != 'in-review'" | sort: "date" | reverse -%}
+  {%- for p in featured limit: 3 %}{% include pub-item.html pub=p style="compact" %}{% endfor %}
+</section>
+
+<section class="section">
+  <h2 class="section__title">In the media
+    <a class="section__more" href="{{ '/media/' | relative_url }}">All coverage →</a>
+  </h2>
+  {%- assign all = site.data.media | sort: "date" | reverse -%}
+  {%- assign pinned = all | where: "pin", true -%}
+  {%- assign rest = all | where_exp: "m", "m.pin != true" -%}
+  {%- assign items = pinned | concat: rest -%}
+  <ul class="news">
+    {%- for m in items limit: 4 %}
+    <li>
+      <span class="news__date">{{ m.date | date: "%B %Y" }}</span>
+      {% if m.url and m.url != "" %}<a href="{{ m.url }}">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}
+      — {{ m.outlet }}{% if m.note %}, {{ m.note }}{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

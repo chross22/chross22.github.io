@@ -1,0 +1,72 @@
+# Public R packages and analysis code.
+# `group` drives the headings on /code/, and groups appear in the order they
+# first occur below — so the leading entry sets the first heading on the page.
+# taupatch leads: it implements the method in Ross et al. (2023).
+# To add a package, copy a block.
+
+- name: "taupatch"
+  group: "Models"
+  language: "R"
+  status: "maintained"
+  summary: "Builds monthly habitat suitability models for high-abundance zooplankton patches
+    (\"tau-patches\"), where a patch is defined by a species-specific abundance threshold.
+    Point-and-click Shiny app or YAML-driven package."
+  repo: "https://github.com/chross22/taupatch"
+  paper: "/publication/2023-01-12-calanus-finmarchicus-thresholds"
+
+- name: "dsfit"
+  group: "Models"
+  language: "R"
+  status: "maintained"
+  summary: "Fits a set of candidate detection functions to line-transect distance data and
+    compares them on the quantities that actually matter for abundance — effective strip
+    half-width and its coefficient of variation — rather than on the Akaike information
+    criterion alone. Includes the gamma key that
+    Distance::ds() does not offer."
+  repo: "https://github.com/chross22/dsfit"
+
+- name: "narwcr"
+  group: "Survey data"
+  language: "R"
+  status: "maintained"
+  summary: "Reads marine mammal survey data recorded in the North Atlantic Right Whale
+    Consortium (NARWC) database format and puts it into a single, predictable shape,
+    reconciling the column names that different survey programs use for the same thing."
+  repo: "https://github.com/chross22/narwcr"
+
+- name: "distsamp"
+  group: "Survey data"
+  language: "R"
+  status: "maintained"
+  summary: "Turns aerial line-transect survey data into effort segments and detection
+    distances ready for distance sampling: on-effort determination, great-circle effort,
+    Becker segmentation, and right-angle distances from all four sources the archive records."
+  repo: "https://github.com/chross22/distsamp"
+
+- name: "datamatch"
+  group: "Environmental covariates"
+  language: "R"
+  status: "maintained"
+  summary: "Fetches Copernicus Marine and other ocean and atmosphere data and joins it to
+    point observations in space and time, at the source data's own resolution. The join is a
+    general spatiotemporal nearest-feature match, so either side may be the species data."
+  repo: "https://github.com/chross22/datamatch"
+
+- name: "derivoce"
+  group: "Environmental covariates"
+  language: "R"
+  status: "maintained"
+  summary: "Computes derived oceanographic covariates from gridded ocean data — spatial and
+    temporal gradients, time-integrated variables, calendar-unit lags, eddy kinetic energy,
+    Lyapunov exponents, and distances to fronts and shore."
+  repo: "https://github.com/chross22/derivoce"
+
+- name: "fancyfx"
+  group: "Visualization"
+  language: "R"
+  status: "maintained"
+  summary: "Turns fitted models into manuscript-ready figures. Every effect curve is paired
+    with a rug of the raw data stacked directly above it, so a bend in the curve can be read
+    against how much data actually supports it. GAMs via gratia, everything else via
+    marginaleffects."
+  repo: "https://github.com/chross22/fancyfx"
