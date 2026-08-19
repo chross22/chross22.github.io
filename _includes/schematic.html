@@ -1,0 +1,111 @@
+{%- comment -%}
+Schematic diagrams for /code/. These show the SHAPE of each package's output —
+they are drawn, not produced by running the code, and are labelled as such.
+Nothing here is real data or a real result.
+
+Colours come from the theme tokens so both themes work; nothing relies on
+colour alone to carry meaning.
+  include.kind — matches `schematic:` in _data/software.yml
+{%- endcomment -%}
+<figure class="schematic">
+{%- case include.kind -%}
+
+{%- when 'threshold-map' -%}
+<svg viewBox="0 0 300 120" role="img" aria-label="Schematic: a grid of cells where only those above a density threshold are filled, forming patches.">
+  <g fill="none" stroke="currentColor" stroke-opacity=".25">
+    {%- for r in (0..4) %}{% for c in (0..11) %}
+    <rect x="{{ c | times: 25 }}" y="{{ r | times: 24 }}" width="25" height="24"/>
+    {%- endfor %}{% endfor %}
+  </g>
+  <g fill="var(--accent)" fill-opacity=".55">
+    <rect x="75" y="24" width="25" height="24"/><rect x="100" y="24" width="25" height="24"/>
+    <rect x="100" y="48" width="25" height="24"/><rect x="125" y="48" width="25" height="24"/>
+    <rect x="200" y="72" width="25" height="24"/><rect x="225" y="72" width="25" height="24"/>
+    <rect x="225" y="48" width="25" height="24"/>
+  </g>
+</svg>
+<figcaption>Cells above the feeding threshold form patches; everything below it is not prey.</figcaption>
+
+{%- when 'detection-curves' -%}
+<svg viewBox="0 0 300 120" role="img" aria-label="Schematic: three detection-probability curves falling with distance from the transect line.">
+  <line x1="30" y1="100" x2="290" y2="100" stroke="currentColor" stroke-opacity=".4"/>
+  <line x1="30" y1="10" x2="30" y2="100" stroke="currentColor" stroke-opacity=".4"/>
+  <path d="M30 20 C 90 22, 130 80, 290 96" fill="none" stroke="var(--link)" stroke-width="2"/>
+  <path d="M30 20 C 70 20, 90 92, 290 98" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 3"/>
+  <path d="M30 34 C 80 20, 140 78, 290 94" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="1 4"/>
+  <text x="36" y="16" font-size="9" fill="currentColor" fill-opacity=".65">p(detect)</text>
+  <text x="238" y="114" font-size="9" fill="currentColor" fill-opacity=".65">distance</text>
+</svg>
+<figcaption>Candidate keys — half-normal, hazard-rate, gamma — compared on effective strip half-width.</figcaption>
+
+{%- when 'column-tidy' -%}
+<svg viewBox="0 0 300 120" role="img" aria-label="Schematic: three sets of differently-named columns converging into one standard table.">
+  <g font-size="8" fill="currentColor" fill-opacity=".6">
+    <text x="4" y="26">LATITUDE</text><text x="4" y="60">lat_dd</text><text x="4" y="94">Lat</text>
+  </g>
+  <g stroke="currentColor" stroke-opacity=".35" fill="none">
+    <path d="M62 22 C 110 22, 120 56, 170 56"/>
+    <path d="M62 56 L 170 56"/>
+    <path d="M62 90 C 110 90, 120 56, 170 56"/>
+  </g>
+  <rect x="172" y="40" width="120" height="32" fill="var(--accent)" fill-opacity=".18" stroke="var(--accent)" stroke-opacity=".5"/>
+  <text x="186" y="60" font-size="9" fill="currentColor">latitude</text>
+</svg>
+<figcaption>Whatever a survey programme called a column, it comes out under one name.</figcaption>
+
+{%- when 'transect-segments' -%}
+<svg viewBox="0 0 300 120" role="img" aria-label="Schematic: a survey track line cut into equal segments, with sightings marked along it.">
+  <path d="M10 90 C 70 30, 150 100, 290 40" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="2"/>
+  <g stroke="var(--accent)" stroke-width="2">
+    <line x1="52" y1="47" x2="60" y2="63"/><line x1="108" y1="62" x2="112" y2="80"/>
+    <line x1="164" y1="80" x2="166" y2="62"/><line x1="220" y1="66" x2="222" y2="48"/>
+  </g>
+  <g fill="var(--link)">
+    <circle cx="80" cy="63" r="3.5"/><circle cx="140" cy="79" r="3.5"/><circle cx="196" cy="66" r="3.5"/>
+  </g>
+</svg>
+<figcaption>Track split into equal-effort segments; sightings attach to the segment they fall on.</figcaption>
+
+{%- when 'grid-join' -%}
+<svg viewBox="0 0 300 120" role="img" aria-label="Schematic: scattered points overlaid on a gridded environmental field, each taking the value of the cell beneath it.">
+  <g fill="none" stroke="currentColor" stroke-opacity=".22">
+    {%- for r in (0..3) %}{% for c in (0..7) %}
+    <rect x="{{ c | times: 24 | plus: 60 }}" y="{{ r | times: 24 | plus: 12 }}" width="24" height="24"/>
+    {%- endfor %}{% endfor %}
+  </g>
+  <g fill="var(--accent)" fill-opacity=".18">
+    <rect x="84" y="36" width="24" height="24"/><rect x="156" y="12" width="24" height="24"/><rect x="204" y="60" width="24" height="24"/>
+  </g>
+  <g fill="var(--link)">
+    <circle cx="96" cy="48" r="4"/><circle cx="168" cy="24" r="4"/><circle cx="216" cy="72" r="4"/>
+  </g>
+</svg>
+<figcaption>Each observation takes the value of the cell it falls in, at the source data's own resolution.</figcaption>
+
+{%- when 'gradient-field' -%}
+<svg viewBox="0 0 300 120" role="img" aria-label="Schematic: a smooth field with arrows showing the direction and steepness of change across it.">
+  <defs><linearGradient id="gf" x1="0" x2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".05"/><stop offset="1" stop-color="var(--accent)" stop-opacity=".38"/></linearGradient></defs>
+  <rect x="10" y="12" width="280" height="96" fill="url(#gf)"/>
+  <g stroke="currentColor" stroke-opacity=".65" stroke-width="1.6" fill="none">
+    {%- for c in (0..5) %}
+    <line x1="{{ c | times: 46 | plus: 34 }}" y1="60" x2="{{ c | times: 46 | plus: 56 }}" y2="60"/>
+    <path d="M{{ c | times: 46 | plus: 51 }} 55 L{{ c | times: 46 | plus: 58 }} 60 L{{ c | times: 46 | plus: 51 }} 65"/>
+    {%- endfor %}
+  </g>
+</svg>
+<figcaption>Gradients, lags, and distances derived from a gridded field rather than read off it.</figcaption>
+
+{%- when 'effect-rug' -%}
+<svg viewBox="0 0 300 120" role="img" aria-label="Schematic: a fitted effect curve with a confidence ribbon, and a rug of raw data ticks beneath showing where the data actually is.">
+  <path d="M30 78 C 90 30, 150 26, 288 58 L288 74 C150 44, 90 48, 30 90 Z" fill="var(--accent)" fill-opacity=".16"/>
+  <path d="M30 84 C 90 38, 150 36, 288 66" fill="none" stroke="var(--link)" stroke-width="2.2"/>
+  <line x1="30" y1="100" x2="290" y2="100" stroke="currentColor" stroke-opacity=".4"/>
+  <g stroke="currentColor" stroke-opacity=".8">
+    {%- assign ticks = "34,40,46,52,58,64,70,78,86,96,108,120,132,150,168,190,214,246,272" | split: "," -%}
+    {%- for t in ticks %}<line x1="{{ t }}" y1="103" x2="{{ t }}" y2="110"/>{% endfor %}
+  </g>
+</svg>
+<figcaption>The rug shows where the data actually is, so a bend can be read against its support.</figcaption>
+
+{%- endcase -%}
+</figure>

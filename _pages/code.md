@@ -27,6 +27,12 @@ remotes::install_github("chross22/taupatch")
   </div>
   <p>{{ pkg.summary }}</p>
   <p class="pkg__install"><code>remotes::install_github("chross22/{{ pkg.name }}")</code></p>
+  {%- if pkg.example %}
+  <div class="pkg__demo">
+    <div class="pkg__code">{% highlight r %}{{ pkg.example }}{% endhighlight %}</div>
+    {%- if pkg.schematic %}{% include schematic.html kind=pkg.schematic %}{% endif %}
+  </div>
+  {%- endif %}
   <div class="btn-row mt-5">
     <a class="btn" href="{{ pkg.repo }}">{% include icon.html name="github" %} Repository</a>
     {%- if pkg.paper %}<a class="btn" href="{{ pkg.paper | relative_url }}">{% include icon.html name="doc" %} Related paper</a>{% endif %}

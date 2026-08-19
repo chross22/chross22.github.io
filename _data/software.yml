@@ -11,6 +11,10 @@
   summary: "Builds monthly habitat suitability models for high-abundance zooplankton patches
     (\"tau-patches\"), where a patch is defined by a species-specific abundance threshold.
     Point-and-click Shiny app or YAML-driven package."
+  example: |
+    config <- load_config("study.yaml")
+    run_taupatch_app()   # or use the config
+  schematic: "threshold-map"
   repo: "https://github.com/chross22/taupatch"
   paper: "/publication/2023-01-12-calanus-finmarchicus-thresholds"
 
@@ -23,6 +27,12 @@
     half-width and its coefficient of variation — rather than on the Akaike information
     criterion alone. Includes the gamma key that
     Distance::ds() does not offer."
+  example: |
+    sw <- sweep_models(
+      model_set(key = c("hn", "hr")),
+      data = detections
+    )
+  schematic: "detection-curves"
   repo: "https://github.com/chross22/dsfit"
 
 - name: "narwcr"
@@ -32,15 +42,25 @@
   summary: "Reads marine mammal survey data recorded in the North Atlantic Right Whale
     Consortium (NARWC) database format and puts it into a single, predictable shape,
     reconciling the column names that different survey programs use for the same thing."
+  example: |
+    dat <- read_narwc("extract.csv")
+    narwc_column_mapping(dat)
+  schematic: "column-tidy"
   repo: "https://github.com/chross22/narwcr"
 
 - name: "distsamp"
   group: "Survey data"
   language: "R"
   status: "maintained"
-  summary: "Turns aerial line-transect survey data into effort segments and detection
-    distances ready for distance sampling: on-effort determination, great-circle effort,
-    Becker segmentation, and right-angle distances from all four sources the archive records."
+  summary: "Turns aerial line-transect survey data from the NARWC database into effort
+    segments ready for Distance and dsm — each with a location, an amount of effort, and
+    counts of what was seen along it. Where the survey recorded declination angles,
+    perpendicular distances come out in the shape a detection function wants."
+  example: |
+    dat  <- read_narwc(path)
+    validate_narwc(dat)   # never stops
+    segs <- segment_survey(dat, 5)
+  schematic: "transect-segments"
   repo: "https://github.com/chross22/distsamp"
 
 - name: "datamatch"
@@ -50,6 +70,11 @@
   summary: "Fetches Copernicus Marine and other ocean and atmosphere data and joins it to
     point observations in space and time, at the source data's own resolution. The join is a
     general spatiotemporal nearest-feature match, so either side may be the species data."
+  example: |
+    sst <- accessCopernicus("thetao", bb)
+    pts <- matchData(sightings, sst)
+    source_of(pts)
+  schematic: "grid-join"
   repo: "https://github.com/chross22/datamatch"
 
 - name: "derivoce"
@@ -59,6 +84,10 @@
   summary: "Computes derived oceanographic covariates from gridded ocean data — spatial and
     temporal gradients, time-integrated variables, calendar-unit lags, eddy kinetic energy,
     Lyapunov exponents, and distances to fronts and shore."
+  example: |
+    grad  <- horizontal_gradient(sst)
+    shore <- distance_to_shore(grid)
+  schematic: "gradient-field"
   repo: "https://github.com/chross22/derivoce"
 
 - name: "fancyfx"
@@ -69,4 +98,8 @@
     with a rug of the raw data stacked directly above it, so a bend in the curve can be read
     against how much data actually supports it. GAMs via gratia, everything else via
     marginaleffects."
+  example: |
+    fit <- mgcv::gam(y ~ s(sst), data = d)
+    plotEffects(fit, d, "sst")
+  schematic: "effect-rug"
   repo: "https://github.com/chross22/fancyfx"

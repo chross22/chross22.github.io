@@ -375,3 +375,46 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   .news--split li + li { border-top: 1px solid var(--border); }
   .news--split li:nth-child(2) { border-top: 0; }
 }
+
+// ---- package example + schematic ----------------------------------------
+// A short real call from the package's own README, beside a drawn schematic
+// of what comes out. The schematics are diagrams, never output — see the
+// caption on each and the comment in _includes/schematic.html.
+.pkg__demo {
+  display: grid;
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+@media (min-width: 48rem) {
+  .pkg__demo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+}
+
+.pkg__code pre,
+.pkg__code .highlight {
+  margin: 0;
+  font-size: var(--fs-xs);
+  // Long lines scroll inside the block rather than being clipped by it.
+  overflow-x: auto;
+}
+.pkg__code code { white-space: pre; }
+
+.schematic {
+  margin: 0;
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+  }
+}
+
+.schematic figcaption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  // Marked as drawn, not measured — these must never read as results.
+  &::before { content: "Schematic. "; font-style: italic; }
+}
