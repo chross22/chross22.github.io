@@ -29,9 +29,9 @@
     Distance::ds() does not offer."
   example: |
     sw <- sweep_models(
+      detections,
       model_set(key = c("hn", "hr")),
-      data = detections
-    )
+      truncation = 400)
   schematic: "detection-curves"
   repo: "https://github.com/chross22/dsfit"
 
@@ -67,13 +67,17 @@
   group: "Environmental covariates"
   language: "R"
   status: "maintained"
-  summary: "Fetches Copernicus Marine and other ocean and atmosphere data and joins it to
-    point observations in space and time, at the source data's own resolution. The join is a
-    general spatiotemporal nearest-feature match, so either side may be the species data."
+  summary: "Fetches ocean and atmosphere data from five sources — Copernicus Marine, FVCOM,
+    HYCOM and others — and joins it to point observations in space and time. Variables are
+    requested by plain name: ask for SST, not thetao, and the catalog finds the product.
+    matchData() records which source each value came from, because SST from three models is
+    three different numbers."
   example: |
-    sst <- accessCopernicus("thetao", bb)
-    pts <- matchData(sightings, sst)
-    source_of(pts)
+    env <- accessCopernicus(
+      vars = c("SST", "SSS", "MLD"),
+      years = 2003:2017, months = 1:12,
+      bounding_box = bb)
+    matched <- matchData(sightings, env)
   schematic: "grid-join"
   repo: "https://github.com/chross22/datamatch"
 
