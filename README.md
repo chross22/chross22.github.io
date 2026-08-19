@@ -144,3 +144,37 @@ contour motif instead. Set `photo: none` to remove the slot entirely.
 - **Colours live in `_sass/site/_tokens.scss` only.** Components reference
   semantic tokens (`--text`, `--link`), never raw hex. Dark mode reassigns about
   a dozen declarations and nothing else.
+
+## Domain
+
+The site is served at **https://camilleross.org**. Two things must agree, or
+Google Scholar will advertise PDFs at a host that no longer serves them:
+
+- `CNAME` at the repo root — what GitHub Pages reads
+- `url:` in `_config.yml` — what every absolute link, the feed, and the
+  `citation_pdf_url` tags are built from
+
+### DNS records
+
+Apex is canonical; GitHub redirects `www` to it automatically.
+
+| Type  | Name  | Value                  |
+|-------|-------|------------------------|
+| A     | `@`   | `185.199.108.153`      |
+| A     | `@`   | `185.199.109.153`      |
+| A     | `@`   | `185.199.110.153`      |
+| A     | `@`   | `185.199.111.153`      |
+| AAAA  | `@`   | `2606:50c0:8000::153`  |
+| AAAA  | `@`   | `2606:50c0:8001::153`  |
+| AAAA  | `@`   | `2606:50c0:8002::153`  |
+| AAAA  | `@`   | `2606:50c0:8003::153`  |
+| CNAME | `www` | `chross22.github.io.`  |
+
+The four A records are GitHub's anycast addresses — all four, not one. The
+AAAA records are optional but cost nothing and cover IPv6-only clients.
+
+Then in the repo: **Settings → Pages → Custom domain**, enter `camilleross.org`,
+save, and once the certificate is issued tick **Enforce HTTPS**. The
+certificate can take up to an hour; the tickbox stays greyed out until it is
+ready, which is normal and not an error.
+
