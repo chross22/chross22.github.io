@@ -344,6 +344,7 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   // The hero has to widen with the grid or the name sits indented relative to
   // the prose beneath it.
   .home-grid,
+  .media-strip,
   .hero {
     width: min(82rem, 100vw - 2 * var(--sp-6));
     margin-inline: calc(50% - min(41rem, 50vw - var(--sp-6)));
@@ -360,3 +361,17 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 
 .home-side > .section { margin-top: var(--sp-7); }
 .home-side > .facts + .section { margin-top: var(--sp-7); }
+
+// Media sits below the two columns, so it gets the full width. Four items in
+// one column across 82rem would be a very long line for a short entry.
+@media (min-width: 76rem) {
+  .news--split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--sp-8);
+  }
+  // The default top border between stacked items would draw across both
+  // columns at the wrong place; scope it to each column instead.
+  .news--split li + li { border-top: 1px solid var(--border); }
+  .news--split li:nth-child(2) { border-top: 0; }
+}

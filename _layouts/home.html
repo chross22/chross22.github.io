@@ -68,23 +68,30 @@ they cannot drift when a paper, package, or talk is added.
       {%- for p in featured limit: 3 %}{% include pub-item.html pub=p style="compact" %}{% endfor %}
     </section>
 
-    <section class="section">
-      <h2 class="section__title">In the media
-        <a class="section__more" href="{{ '/media/' | relative_url }}">All coverage →</a>
-      </h2>
-      {%- assign all = site.data.media | sort: "date" | reverse -%}
-      {%- assign pinned = all | where: "pin", true -%}
-      {%- assign rest = all | where_exp: "m", "m.pin != true" -%}
-      {%- assign items = pinned | concat: rest -%}
-      <ul class="news">
-        {%- for m in items limit: 4 %}
-        <li>
-          <span class="news__date">{{ m.date | date: "%B %Y" }}</span>
-          {% if m.url and m.url != "" %}<a href="{{ m.url }}">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}
-          — {{ m.outlet }}{% if m.note %}, {{ m.note }}{% endif %}
-        </li>
-        {%- endfor %}
-      </ul>
-    </section>
   </div>
 </div>
+
+{%- comment -%}
+Media spans the full width beneath the grid rather than sitting in the right
+column. In the column it hung below where the About prose ended, alone with
+empty space beside it. At a glance plus selected publications balance the
+prose closely enough that neither column dangles.
+{%- endcomment -%}
+<section class="section media-strip">
+  <h2 class="section__title">In the media
+    <a class="section__more" href="{{ '/media/' | relative_url }}">All coverage →</a>
+  </h2>
+  {%- assign all = site.data.media | sort: "date" | reverse -%}
+  {%- assign pinned = all | where: "pin", true -%}
+  {%- assign rest = all | where_exp: "m", "m.pin != true" -%}
+  {%- assign items = pinned | concat: rest -%}
+  <ul class="news news--split">
+    {%- for m in items limit: 4 %}
+    <li>
+      <span class="news__date">{{ m.date | date: "%B %Y" }}</span>
+      {% if m.url and m.url != "" %}<a href="{{ m.url }}">{{ m.title }}</a>{% else %}{{ m.title }}{% endif %}
+      — {{ m.outlet }}{% if m.note %}, {{ m.note }}{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
