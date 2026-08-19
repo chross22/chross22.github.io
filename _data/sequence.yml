@@ -1,0 +1,29 @@
+# A photo sequence rendered as a filmstrip on the homepage.
+#
+# TO TURN IT ON: drop the four files into images/ using the names below, then
+# set `enabled: false`. It stays hidden until then so the homepage never shows
+# broken images.
+#
+# Frames are shown in the order listed. Any number works; four reads well.
+
+enabled: false
+
+credit: "Photographs by Camille H. Ross"
+caption: "A humpback whale lobtailing — raising the fluke clear of the water and
+  bringing it down hard. Four frames, seconds apart."
+# Add where and when if you want them shown, e.g. "Stellwagen Bank, 2015"
+where: ""
+
+frames:
+  - file: "sequence-1.jpg"
+    alt: "A humpback whale's fluke raised high above the sea surface, its
+      white underside spread wide, water streaming from the trailing edge."
+  - file: "sequence-2.jpg"
+    alt: "The same fluke, now lower and angled, the whale's tail stock arching
+      as it begins to swing down."
+  - file: "sequence-3.jpg"
+    alt: "The fluke swept over almost horizontal, close to the surface, at the
+      bottom of its arc."
+  - file: "sequence-4.jpg"
+    alt: "The fluke has struck the water; a wall of white spray rises where it
+      landed and the swell rolls outward."

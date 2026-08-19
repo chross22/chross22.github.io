@@ -231,3 +231,52 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
     word-break: break-all;
   }
 }
+
+// ---- photo sequence (filmstrip) -----------------------------------------
+// Four frames of a single event, read left to right. On narrow screens the
+// row scrolls and snaps frame to frame rather than shrinking each one to
+// illegibility; from --bp-md up all frames sit in one even grid.
+.sequence {
+  margin: var(--sp-8) 0 0;
+}
+
+.sequence__strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 78%;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  padding-bottom: var(--sp-2);
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: 40rem) {
+    grid-auto-columns: 1fr;
+    overflow-x: visible;
+  }
+}
+
+.sequence__frame {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  scroll-snap-align: start;
+}
+
+.sequence__caption {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+// Credit is set apart by weight and a separator, not by colour alone.
+.sequence__credit {
+  display: block;
+  margin-top: var(--sp-1);
+  font-style: italic;
+}
