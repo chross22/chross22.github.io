@@ -287,18 +287,6 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   .banner__caption { padding-inline: var(--sp-6); }
 }
 
-// ---- intro: About text plus a facts panel -------------------------------
-// At wide widths the prose stops at its reading measure and leaves ~400px of
-// empty gutter. The panel fills it with counted facts rather than decoration.
-// Below --bp-lg it drops under the prose instead of squeezing both.
-.intro {
-  display: grid;
-  gap: var(--sp-7);
-  align-items: start;
-}
-@media (min-width: 64rem) {
-  .intro { grid-template-columns: minmax(0, 1fr) 19rem; gap: var(--sp-8); }
-}
 
 .facts {
   border: 1px solid var(--border);
@@ -335,3 +323,40 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 .facts dd > a {
   font-weight: 650;
 }
+
+// ---- homepage two-column grid -------------------------------------------
+// Prose left, scannable lists right, once the viewport can carry both without
+// squeezing either. 76rem is the threshold: below it the prose would drop
+// under ~55 characters a line, which is worse than a longer page.
+//
+// One column below that, in source order — about, facts, publications, media.
+.home-grid {
+  display: grid;
+  gap: var(--sp-7);
+  align-items: start;
+}
+
+@media (min-width: 76rem) {
+  // Two columns inside the 68rem measure would leave the prose at ~52
+  // characters a line, which is below comfortable reading. The grid therefore
+  // widens past the container — but only to 82rem, and only here. Body pages
+  // keep the narrower measure, where a single column should stay readable.
+  // The hero has to widen with the grid or the name sits indented relative to
+  // the prose beneath it.
+  .home-grid,
+  .hero {
+    width: min(82rem, 100vw - 2 * var(--sp-6));
+    margin-inline: calc(50% - min(41rem, 50vw - var(--sp-6)));
+  }
+  .home-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: var(--sp-8);
+  }
+  // The first section in each column sets its own top spacing; without this
+  // the right column starts lower than the prose it sits beside.
+  .home-side > .facts { margin-top: 0; }
+  .home-side > .section:first-child { margin-top: 0; }
+}
+
+.home-side > .section { margin-top: var(--sp-7); }
+.home-side > .facts + .section { margin-top: var(--sp-7); }
