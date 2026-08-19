@@ -9,7 +9,7 @@ editor_options:
 ---
 
 Our knowledge of whales at sea is contingent upon our ability to find
-them: whether visually from an airlane or vessel or acoustically from
+them: whether visually from an airplane or vessel or acoustically from
 hydrophones. Both of those observation types are shaped as much by the
 survey as by the animal's behavior and environmental conditions.
 
@@ -28,7 +28,7 @@ Right whales eat copepods --- primarily *Calanus finmarchicus*. However,
 a whale does not necessarily respond to average copepod abundance, but
 rather to whether a prey patch is dense enough that feeding on it is
 energetically advantageous. That distinction matters especially for
-modelling.
+modeling.
 
 Part of my work involves using environmental conditions to explain and
 predict prey aggregations that *exceed a whale-specific feeding
@@ -122,7 +122,7 @@ relative_url }}) · [The surprising oceanography of the Gulf of Maine]({{
 
 ## Methods and tools
 
--   **Observation process** --- detectability modelling from
+-   **Observation process** --- detectability modeling from
     line-transect data, density surface models with explicit treatment
     of survey effort, propagating observation uncertainty into
     management-facing estimates
