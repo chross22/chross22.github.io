@@ -364,6 +364,31 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 
 // Media sits below the two columns, so it gets the full width. Four items in
 // one column across 82rem would be a very long line for a short entry.
+//
+// It also needs real separation: butted straight against the grid it read as a
+// continuation of the right-hand column rather than a section of its own. A
+// rule plus generous space above makes the break unambiguous.
+.media-strip {
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-7);
+  border-top: 1px solid var(--border);
+}
+
+.media-strip .section__title {
+  font-size: var(--fs-lg);
+}
+
+// Give each entry room to breathe — these were set for a narrow column.
+.media-strip .news li {
+  padding-block: var(--sp-4);
+  font-size: var(--fs-base);
+}
+
+.media-strip .news__date {
+  display: block;
+  margin-bottom: var(--sp-1);
+}
+
 @media (min-width: 76rem) {
   .news--split {
     display: grid;
