@@ -5,23 +5,17 @@ permalink: /research/
 lede: "Estimating ecological fields from sparse, irregular, effort-limited observations — and keeping the observation process separate from the ecological one."
 ---
 
-Most of what we know about whales at sea comes from looking for them: a plane on a
-transect line, a ship towing a net, a hydrophone on the bottom. Every one of those
-observations is shaped as much by the survey as by the animal — by where we looked,
-how hard, in what conditions, and how far away something can be seen before it stops
-being seen at all.
+Our knowledge of whales at sea is contingent upon our ability to find them: whether visually from an airlane or vessel or acoustically from hydrophones. Both of those observation types are shaped as much by the survey as by the animal's behavior and environmental conditions.
 
-My work sits on that seam. I build models that separate the observation process from
+My work as a marine ecologist focused on conservation considers what we can infer from the data we are able to collect. I build models that separate the observation process from
 the ecological process, so that what comes out the other end is an estimate of what is
 actually there rather than an estimate of where we happened to look. That matters
 because these models are not academic exercises: they feed directly into the decision
 support tools used to manage the critically endangered North Atlantic right whale.
 
-Three threads run through it.
-
 ## Where the food is {#prey}
 
-Right whales eat copepods — mostly *Calanus finmarchicus* — and they are extremely
+Right whales eat copepods — primarily *Calanus finmarchicus* — and they are extremely
 particular about it. A whale does not respond to average copepod abundance; it responds
 to whether a patch is dense enough that feeding on it returns more energy than it costs.
 That distinction turns out to matter enormously for modelling.
