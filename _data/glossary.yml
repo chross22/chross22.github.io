@@ -1,0 +1,50 @@
+# Key terms for the sidebar on /research/. Kept in data rather than in the page
+# so Camille's prose in research.md is never touched to edit a definition.
+#
+# `anchor` is optional and links the term to the section it belongs with.
+
+- term: "North Atlantic right whale"
+  latin: "Eubalaena glacialis"
+  anchor: density
+  text: "A baleen whale of the western North Atlantic, critically endangered with
+    roughly 370 individuals remaining. Slow-moving and surface-feeding, which is
+    much of why vessel strikes and fishing-gear entanglement are the leading
+    causes of death."
+
+- term: "Calanus finmarchicus"
+  anchor: prey
+  text: "A copepod a few millimetres long, and the right whale's principal prey.
+    It stores energy as a lipid sac, so a whale feeding on dense aggregations of
+    older-stage individuals gets far more per mouthful than abundance alone
+    suggests."
+
+- term: "τ-patch"
+  anchor: prey
+  text: "An aggregation of prey dense enough to clear the energetic threshold at
+    which feeding returns more energy than it costs. Modelling patches rather
+    than average abundance is the distinction this work rests on."
+
+- term: "Density surface model"
+  abbr: "DSM"
+  anchor: density
+  text: "A model that turns line-transect survey counts into a map of animal
+    density, correcting for how much was surveyed and how likely an animal was to
+    be seen at all."
+
+- term: "Detection function"
+  anchor: density
+  text: "The curve describing how the probability of spotting an animal falls
+    with distance from the survey line. Without it, a map records where observers
+    looked rather than where animals were."
+
+- term: "Regime shift"
+  anchor: change
+  text: "An abrupt, persistent reorganisation of an ecosystem into a different
+    state, rather than a gradual trend. It matters for models because a
+    relationship learned before the shift may not hold after it."
+
+- term: "Gulf of Maine"
+  anchor: change
+  text: "A semi-enclosed sea between Cape Cod and Nova Scotia, warming faster
+    than almost any other part of the world ocean — which is why right whale
+    distribution there has changed within a single career."

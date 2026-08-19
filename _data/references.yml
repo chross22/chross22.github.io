@@ -1,0 +1,61 @@
+# Background literature linked from /research/. Every DOI here was verified
+# against Crossref at the time of writing — none are from memory.
+#
+# `thread` matches the section anchors in research.md so each list appears
+# beside the work it is background for.
+
+- thread: density
+  authors: "Miller, D. L., Burt, M. L., Rexstad, E. A., Thomas, L."
+  year: 2013
+  title: "Spatial models for distance sampling data: recent developments and future directions"
+  venue: "Methods in Ecology and Evolution"
+  doi: "10.1111/2041-210X.12105"
+  note: "The density surface modelling framework this work builds on."
+
+- thread: density
+  authors: "Roberts, J. J., Best, B. D., Mannocci, L., Fujioka, E., Halpin, P. N., et al."
+  year: 2016
+  title: "Habitat-based cetacean density models for the U.S. Atlantic and Gulf of Mexico"
+  venue: "Scientific Reports"
+  doi: "10.1038/srep22615"
+  note: "The density models these prey fields are designed to feed into."
+
+- thread: prey
+  authors: "Sorochan, K. A., Plourde, S., Baumgartner, M. F., Johnson, C. L."
+  year: 2021
+  title: "Availability, supply, and aggregation of prey (Calanus spp.) in foraging areas of the North Atlantic right whale"
+  venue: "ICES Journal of Marine Science"
+  doi: "10.1093/icesjms/fsab200"
+  note: "Why aggregation, not abundance, is the quantity that matters."
+
+- thread: change
+  authors: "Pershing, A. J., Alexander, M. A., Hernandez, C. M., Kerr, L. A., et al."
+  year: 2015
+  title: "Slow adaptation in the face of rapid warming leads to collapse of the Gulf of Maine cod fishery"
+  venue: "Science"
+  doi: "10.1126/science.aac9819"
+  note: "The warming that reshaped this ecosystem, and what it cost."
+
+- thread: change
+  authors: "Pershing, A. J., Alexander, M. A., Brady, D. C., Brickman, D., et al."
+  year: 2021
+  title: "Climate impacts on the Gulf of Maine ecosystem"
+  venue: "Elementa: Science of the Anthropocene"
+  doi: "10.1525/elementa.2020.00076"
+  note: "A synthesis of how the Gulf of Maine is changing."
+
+- thread: change
+  authors: "Record, N. R., Runge, J. A., Pendleton, D. E., Balch, W. M., et al."
+  year: 2019
+  title: "Rapid climate-driven circulation changes threaten conservation of endangered North Atlantic right whales"
+  venue: "Oceanography"
+  doi: "10.5670/oceanog.2019.201"
+  note: "How circulation change moved the prey, and the whales with it."
+
+- thread: change
+  authors: "Meyer-Gutbrod, E. L., Greene, C. H., Davies, K. T. A., Johns, D. G."
+  year: 2021
+  title: "Ocean regime shift is driving collapse of the North Atlantic right whale population"
+  venue: "Oceanography"
+  doi: "10.5670/oceanog.2021.308"
+  note: "The regime shift framing, applied to this population."

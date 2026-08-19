@@ -446,3 +446,77 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   // Marked as drawn, not measured — these must never read as results.
   &::before { content: "Schematic. "; font-style: italic; }
 }
+
+// ---- research page: prose + glossary sidebar ----------------------------
+// The glossary is a sibling of the prose, never inside it, so research.md can
+// be rewritten freely without disturbing either.
+.research-grid {
+  display: grid;
+  gap: var(--sp-7);
+  align-items: start;
+}
+
+@media (min-width: 76rem) {
+  .research-grid {
+    width: min(82rem, 100vw - 2 * var(--sp-6));
+    margin-inline: calc(50% - min(41rem, 50vw - var(--sp-6)));
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    gap: var(--sp-8);
+  }
+  // Terms stay in view while reading past the section they belong to.
+  .glossary { position: sticky; top: var(--sp-6); }
+}
+
+.glossary {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  padding: var(--sp-5);
+}
+
+.glossary__title {
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.glossary dl { margin: 0; }
+
+.glossary dt {
+  font-size: var(--fs-sm);
+  font-weight: 650;
+  margin-top: var(--sp-4);
+}
+.glossary dt:first-of-type { margin-top: 0; }
+
+.glossary__latin { font-weight: 400; font-size: var(--fs-xs); color: var(--text-muted); }
+.glossary__abbr  { font-weight: 400; color: var(--text-muted); }
+
+.glossary dd {
+  margin: var(--sp-1) 0 0;
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+// ---- background reading list --------------------------------------------
+.refs { list-style: none; padding: 0; margin: var(--sp-4) 0 0; }
+
+.refs li {
+  padding-block: var(--sp-3);
+  font-size: var(--fs-sm);
+}
+.refs li + li { border-top: 1px solid var(--border); }
+
+// The note is what makes the list worth reading, so set it apart by more than
+// colour alone.
+.refs__note {
+  display: block;
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  font-style: italic;
+  color: var(--text-muted);
+}

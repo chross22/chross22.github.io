@@ -1,0 +1,50 @@
+---
+layout: base
+---
+{%- comment -%}
+Research page: Camille's prose exactly as written in _pages/research.md, with
+a glossary sidebar and a background-reading list built from _data/. Nothing
+here edits the page body — the additions sit around it, so her text can be
+rewritten freely without touching this layout.
+{%- endcomment -%}
+<div class="page-head">
+  <h1>{{ page.title }}</h1>
+  {%- if page.lede %}<p class="page-head__lede">{{ page.lede }}</p>{% endif %}
+</div>
+
+<div class="research-grid">
+  <div class="research-main prose">
+    {{ content }}
+
+    {%- if site.data.references.size > 0 %}
+    <h2 id="background">Background reading</h2>
+    <p>Work by others that this research builds on, rather than my own —
+      my papers are listed under each thread above.</p>
+    {%- assign threads = site.data.references | group_by: "thread" -%}
+    <ul class="refs">
+      {%- for t in threads %}{% for r in t.items %}
+      <li>
+        <span class="refs__cite">{{ r.authors }} ({{ r.year }}).
+          <a href="https://doi.org/{{ r.doi }}">{{ r.title }}</a>.
+          <i>{{ r.venue }}</i>.</span>
+        {%- if r.note %}<span class="refs__note">{{ r.note }}</span>{% endif %}
+      </li>
+      {%- endfor %}{% endfor %}
+    </ul>
+    {%- endif %}
+  </div>
+
+  <aside class="glossary" aria-labelledby="glossary-title">
+    <h2 class="glossary__title" id="glossary-title">Key terms</h2>
+    <dl>
+      {%- for g in site.data.glossary %}
+      <dt>
+        {%- if g.anchor %}<a href="#{{ g.anchor }}">{{ g.term }}</a>{% else %}{{ g.term }}{% endif -%}
+        {%- if g.abbr %} <span class="glossary__abbr">({{ g.abbr }})</span>{% endif -%}
+        {%- if g.latin %}<br><i class="glossary__latin">{{ g.latin }}</i>{% endif -%}
+      </dt>
+      <dd>{{ g.text | strip_newlines }}</dd>
+      {%- endfor %}
+    </dl>
+  </aside>
+</div>

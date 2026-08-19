@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: research
 title: "Research"
 permalink: /research/
 lede: "Estimating ecological fields from sparse, irregular, effort-limited observations — and keeping the observation process separate from the ecological one."
