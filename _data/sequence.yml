@@ -1,29 +1,33 @@
-# A photo sequence rendered as a filmstrip on the homepage.
+# A photo sequence rendered as a full-bleed banner under the masthead.
+# Frames show in the order listed.
 #
-# TO TURN IT ON: drop the four files into images/ using the names below, then
-# set `enabled: false`. It stays hidden until then so the homepage never shows
-# broken images.
+# Three frames, not four: the original third exposure had the fluke tip running
+# off the top edge, which reads as a mistake at banner size. Its file is gone;
+# to restore it, re-export IMG_0434 and add it back as the second entry.
 #
-# Frames are shown in the order listed. Any number works; four reads well.
+# Files are named lobtail-N.jpg rather than sequence-N.jpg: an earlier edit
+# reused sequence-3.jpg for different content, and browsers that had seen the
+# old one served it from cache. Never re-point an existing image path at
+# different bytes — give it a new name.
+#
+# Originals were PNG, which is the wrong container for photographs — stored as
+# JPEG at quality 80, visually identical at a fifth of the bytes.
 
-enabled: false
+enabled: true
 
 credit: "Photographs by Camille H. Ross"
-caption: "A humpback whale lobtailing — raising the fluke clear of the water and
-  bringing it down hard. Four frames, seconds apart."
-# Add where and when if you want them shown, e.g. "Stellwagen Bank, 2015"
+# No caption: the frames read on their own, and each is described in its `alt`
+# for anyone who cannot see them.
+# Add `where:` to show a place and year, e.g. "Stellwagen Bank, 2015"
 where: ""
 
 frames:
-  - file: "sequence-1.jpg"
-    alt: "A humpback whale's fluke raised high above the sea surface, its
-      white underside spread wide, water streaming from the trailing edge."
-  - file: "sequence-2.jpg"
-    alt: "The same fluke, now lower and angled, the whale's tail stock arching
-      as it begins to swing down."
-  - file: "sequence-3.jpg"
-    alt: "The fluke swept over almost horizontal, close to the surface, at the
-      bottom of its arc."
-  - file: "sequence-4.jpg"
-    alt: "The fluke has struck the water; a wall of white spray rises where it
-      landed and the swell rolls outward."
+  - file: "lobtail-1.jpg"
+    alt: "A humpback whale's fluke held high above the sea, the white underside
+      angled towards the camera, water still streaming from its trailing edge."
+  - file: "lobtail-2.jpg"
+    alt: "The fluke upright and fully spread, both lobes clear of the water, the
+      tail stock rising vertically from a patch of turquoise water."
+  - file: "lobtail-3.jpg"
+    alt: "The fluke has gone; a wall of white spray stands where it struck the
+      surface and a wave rolls outward across the swell."

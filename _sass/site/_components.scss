@@ -232,51 +232,57 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   }
 }
 
-// ---- photo sequence (filmstrip) -----------------------------------------
-// Four frames of a single event, read left to right. On narrow screens the
-// row scrolls and snaps frame to frame rather than shrinking each one to
-// illegibility; from --bp-md up all frames sit in one even grid.
-.sequence {
-  margin: var(--sp-8) 0 0;
+
+// ---- photo sequence banner ----------------------------------------------
+// Full-bleed strip under the masthead. Four frames across a full-width row
+// land at very nearly their native 3:2, so they are shown uncropped — the
+// horizons differ between frames because the camera moved, and pretending
+// otherwise by cropping would look worse than the honest sequence.
+//
+// Breaks out of .container with the standard full-bleed trick. 100vw (not
+// 100%) is deliberate; the small horizontal-scrollbar risk is handled by
+// overflow-x: clip on the figure.
+.banner {
+  margin: 0 0 var(--sp-7);
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  overflow-x: clip;
+  border-bottom: 1px solid var(--border);
 }
 
-.sequence__strip {
+.banner__strip {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 78%;
-  gap: var(--sp-2);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  overscroll-behavior-x: contain;
-  padding-bottom: var(--sp-2);
-  -webkit-overflow-scrolling: touch;
-
-  @media (min-width: 40rem) {
-    grid-auto-columns: 1fr;
-    overflow-x: visible;
-  }
+  grid-template-columns: repeat(var(--frames, 4), 1fr);
+  gap: 1px;
+  background: var(--border);   // shows through the gaps as hairline rules
 }
 
-.sequence__frame {
+.banner__frame {
+  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  border-radius: var(--radius-sm);
   background: var(--surface);
-  scroll-snap-align: start;
 }
 
-.sequence__caption {
-  margin-top: var(--sp-3);
+// Below 40rem the frames would be ~90px wide each and unreadable, so the strip
+// wraps to two columns. With an odd number of frames the last one spans both,
+// which reads as deliberate rather than as a hole in the grid.
+@media (max-width: 39.999rem) {
+  .banner__strip { grid-template-columns: repeat(2, 1fr); }
+  .banner__frame:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+}
+
+.banner__caption {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding: var(--sp-2) var(--sp-5) 0;
   font-size: var(--fs-xs);
-  color: var(--text-muted);
-  max-width: 62ch;
-}
-
-// Credit is set apart by weight and a separator, not by colour alone.
-.sequence__credit {
-  display: block;
-  margin-top: var(--sp-1);
   font-style: italic;
+  color: var(--text-muted);
+}
+@media (min-width: 40rem) {
+  .banner__caption { padding-inline: var(--sp-6); }
 }

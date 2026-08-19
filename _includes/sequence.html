@@ -1,28 +1,28 @@
 {%- comment -%}
-Photo sequence as a filmstrip. Reads _data/sequence.yml and renders nothing
-unless `enabled: true`, so missing image files can never show as broken.
+Photo sequence as a full-bleed banner directly under the masthead.
 
-Frames sit in a scroll-snapping row on narrow screens and an even grid from
-`--bp-md` up. Every frame carries explicit width/height so the row reserves
-its space before the images load and nothing jumps.
+Full width and four frames across means each frame lands at very close to its
+own 3:2 aspect, so nothing is cropped and the horizons sit where the camera put
+them. Renders nothing unless _data/sequence.yml sets enabled: true, so missing
+files can never show as broken images.
 {%- endcomment -%}
 {%- assign seq = site.data.sequence -%}
 {%- if seq.enabled and seq.frames.size > 0 -%}
-<figure class="sequence">
-  <div class="sequence__strip">
+<figure class="banner">
+  <div class="banner__strip" style="--frames: {{ seq.frames.size }}">
     {%- for f in seq.frames %}
-    <img class="sequence__frame"
+    <img class="banner__frame"
          src="{{ f.file | prepend: '/images/' | relative_url }}"
          alt="{{ f.alt | strip_newlines }}"
-         width="960" height="640" loading="lazy" decoding="async">
+         width="960" height="639"
+         {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+         decoding="async">
     {%- endfor %}
   </div>
-  <figcaption class="sequence__caption">
-    {{ seq.caption | strip_newlines }}
-    {%- if seq.where and seq.where != "" %} {{ seq.where }}.{% endif %}
-    {%- if seq.credit and seq.credit != "" %}
-    <span class="sequence__credit">{{ seq.credit }}</span>
-    {%- endif %}
+  {%- if seq.credit and seq.credit != "" %}
+  <figcaption class="banner__caption">
+    {{ seq.credit }}{% if seq.where and seq.where != "" %} · {{ seq.where }}{% endif %}
   </figcaption>
+  {%- endif %}
 </figure>
 {%- endif -%}
