@@ -39,11 +39,16 @@ exactly once for the index, the homepage, the detail page, and the CV.
   <div class="btn-row">
     {%- if p.doi and p.doi != "" %}
     <a class="btn" href="https://doi.org/{{ p.doi }}">{% include icon.html name="link" %} DOI</a>
-    {%- elsif p.url_external and p.url_external != "" %}
-    <a class="btn" href="{{ p.url_external }}">{% include icon.html name="link" %} Publisher</a>
     {%- endif %}
+    {%- comment -%}
+    A locally hosted copy wins. Where there is none but the paper is open
+    access, link the publisher's free full text. This previously sat in an
+    elsif on the DOI, so any paper with a DOI could never show it.
+    {%- endcomment -%}
     {%- if p.pdf and p.pdf != "" %}
     <a class="btn" href="{{ p.pdf | relative_url }}">{% include icon.html name="download" %} PDF</a>
+    {%- elsif p.url_external and p.url_external != "" %}
+    <a class="btn" href="{{ p.url_external }}">{% include icon.html name="doc" %} Full text</a>
     {%- endif %}
     <a class="btn" href="{{ p.url | relative_url }}">{% include icon.html name="doc" %} Abstract</a>
   </div>

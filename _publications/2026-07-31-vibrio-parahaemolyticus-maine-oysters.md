@@ -19,6 +19,11 @@ volume: ""
 issue: ""
 pages: ""
 doi: "10.1128/aem.00168-26"
+# Gold open access, CC-BY, confirmed via Unpaywall — the full text is free to
+# read and free to host. url_external points at the publisher's own PDF. To
+# serve a local copy instead, drop the file in files/ and set pdf: below; the
+# local copy then takes precedence and Scholar gets a citation_pdf_url.
+url_external: "https://journals.asm.org/doi/pdf/10.1128/aem.00168-26"
 pdf: ""
 type: journal
 status: published
