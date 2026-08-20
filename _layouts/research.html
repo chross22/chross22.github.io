@@ -20,16 +20,19 @@ rewritten freely without touching this layout.
     <h2 id="background">Background reading</h2>
     <p>Foundational works for this research, including modeling methods and
       the current state of the ecosystem.</p>
-    {%- assign threads = site.data.references | group_by: "thread" -%}
+    {%- comment -%} Chronological, oldest first, so the lineage of the work
+    reads in order. The `thread` field is kept in the data but no longer drives
+    the display. {%- endcomment -%}
+    {%- assign refs = site.data.references | sort: "year" -%}
     <ul class="refs">
-      {%- for t in threads %}{% for r in t.items %}
+      {%- for r in refs %}
       <li>
         <span class="refs__cite">{{ r.authors }} ({{ r.year }}).
           <a href="https://doi.org/{{ r.doi }}">{{ r.title }}</a>.
           <i>{{ r.venue }}</i>.</span>
         {%- if r.note %}<span class="refs__note">{{ r.note }}</span>{% endif %}
       </li>
-      {%- endfor %}{% endfor %}
+      {%- endfor %}
     </ul>
     {%- endif %}
   </div>
