@@ -130,7 +130,7 @@ Maine](/publication/2023-01-01-gulf-of-maine-oceanography)
 
 <figure class="research-fig">
   <img src="/images/research/habitat-2050.jpg" alt="Twenty-four small maps of the Gulf of Maine showing modelled right whale habitat suitability in the year 2050, arranged in four labelled blocks for July, August, September and October, each under two emissions scenarios and three chlorophyll assumptions. Suitability concentrates along the shelf edge and the eastern Gulf." loading="lazy" decoding="async">
-  <figcaption>Year-2050 habitat suitability projections by month, under two emissions scenarios (RCP 4.5 and 8.5) and three chlorophyll assumptions (half, same, and double present chlorophyll). <span class="research-fig__cite">From Ross et al. (2021), <i>Elementa: Science of the Anthropocene</i> 9(1):00058. <a href="https://doi.org/10.1525/elementa.2020.20.00058">doi.org/10.1525/elementa.2020.20.00058</a>. CC BY 4.0.</span></figcaption>
+  <figcaption>Year-2050 habitat suitability projections by month, under two emissions scenarios (RCP 4.5 and 8.5) and three chlorophyll assumptions: <strong>HC</strong>, half present-day chlorophyll; <strong>SC</strong>, the same as present day; <strong>DC</strong>, double. Colour is the modelled likelihood of suitable habitat, from 0 to 1. <span class="research-fig__cite">From Ross et al. (2021), <i>Elementa: Science of the Anthropocene</i> 9(1):00058. <a href="https://doi.org/10.1525/elementa.2020.20.00058">doi.org/10.1525/elementa.2020.20.00058</a>. CC BY 4.0.</span></figcaption>
 </figure>
 
 ## Methods and tools
