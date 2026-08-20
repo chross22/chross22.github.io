@@ -21,6 +21,14 @@
   note: "The density models these prey fields are designed to feed into."
 
 - thread: prey
+  authors: "Mayo, C. A., Marx, M. K."
+  year: 1990
+  title: "Surface foraging behaviour of the North Atlantic right whale, Eubalaena glacialis, and associated zooplankton characteristics"
+  venue: "Canadian Journal of Zoology"
+  doi: "10.1139/z90-308"
+  note: "The foundational description of how these whales actually feed."
+
+- thread: prey
   authors: "Sorochan, K. A., Plourde, S., Baumgartner, M. F., Johnson, C. L."
   year: 2021
   title: "Availability, supply, and aggregation of prey (Calanus spp.) in foraging areas of the North Atlantic right whale"
