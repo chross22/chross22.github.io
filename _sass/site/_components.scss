@@ -520,3 +520,28 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   font-style: italic;
   color: var(--text-muted);
 }
+
+// ---- figures reproduced from Camille's own papers -----------------------
+.research-fig { margin: var(--sp-6) 0; }
+
+.research-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  // Published figures are drawn on white; on the dark theme they would
+  // otherwise sit as a glaring panel.
+  background: #fff;
+}
+
+.research-fig figcaption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+// Attribution set apart from the description — CC BY requires it be legible,
+// not buried.
+.research-fig__cite { display: block; margin-top: var(--sp-1); font-style: italic; }

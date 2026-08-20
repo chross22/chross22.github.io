@@ -43,20 +43,22 @@ to *Centropages typicus* and *Pseudocalanus* spp., revealing that the
 and time.
 
 **Key papers:** [Estimating right whale prey based on *Calanus
-finmarchicus* thresholds]({{
-'/publication/2023-01-12-calanus-finmarchicus-thresholds' |
-relative_url }}) · [Beyond *Calanus*: changes to the copepod
-community]({{ '/publication/2025-01-09-beyond-calanus-copepod-community'
-| relative_url }}) · [*Calanus* prey and foraging habitat in Canadian
-waters]({{
-'/publication/2024-08-01-calanus-energetics-foraging-habitat-models' |
-relative_url }})
+finmarchicus*
+thresholds](/publication/2023-01-12-calanus-finmarchicus-thresholds)
+· [Beyond *Calanus*: changes to the copepod community](/publication/2025-01-09-beyond-calanus-copepod-community) · [*Calanus* prey and foraging habitat in Canadian
+waters](/publication/2024-08-01-calanus-energetics-foraging-habitat-models)
 
 **Code:** [`taupatch`](https://github.com/chross22/taupatch) implements
 the threshold patch models;
 [`datamatch`](https://github.com/chross22/datamatch) and
 [`derivoce`](https://github.com/chross22/derivoce) build the
 environmental covariates.
+
+
+<figure class="research-fig">
+  <img src="/images/research/prey-taupatch.jpg" alt="Twelve monthly maps of the northeast US shelf and Gulf of Maine, shaded by predicted probability of a high-density Calanus finmarchicus patch. Probability is highest across the Gulf of Maine from May through September and lowest in late autumn and winter." loading="lazy" decoding="async">
+  <figcaption>Predicted <em>Calanus finmarchicus</em> &tau;-patches by month, at a threshold of 10,000 individuals m<sup>&minus;2</sup>. <span class="research-fig__cite">From Ross et al. (2023), <i>Marine Ecology Progress Series</i> 703:1&ndash;16. <a href="https://doi.org/10.3354/meps14204">doi.org/10.3354/meps14204</a>. CC BY 4.0.</span></figcaption>
+</figure>
 
 ## Whale habitat preference {#density}
 
@@ -79,12 +81,11 @@ This work emphasizes the need for continued surveying and sampling of
 both whales and zooplankton.
 
 **Key papers:** [Incorporating prey fields into right whale density
-surface models]({{
-'/publication/2025-09-11-prey-fields-density-surface-models' |
-relative_url }}) · [Impacts of an oceanographic regime shift on U.S.
-right whale density estimates]({{
-'/publication/2026-regime-shift-right-whale-density-estimates' |
-relative_url }}) *(in review)*
+surface
+models](/publication/2025-09-11-prey-fields-density-surface-models)
+· [Impacts of an oceanographic regime shift on U.S. right whale density
+estimates](/publication/2026-regime-shift-right-whale-density-estimates)
+*(in review)*
 
 **Code:** [`narwcr`](https://github.com/chross22/narwcr) and
 [`distsamp`](https://github.com/chross22/distsamp) handle survey ingest
@@ -92,7 +93,13 @@ and segmentation; [`dsfit`](https://github.com/chross22/dsfit) fits and
 compares detection functions on effective strip half-width rather than
 the Akaike information criterion (AIC) alone.
 
-## Where both are going {#change}
+
+<figure class="research-fig">
+  <img src="/images/research/density-change.jpg" alt="Twelve monthly anomaly maps from Cape Hatteras to the Scotian Shelf, showing the change in predicted right whale density when copepod prey fields replace conventional covariates. Red indicates higher predicted density, blue lower; the strongest increases are in April and May." loading="lazy" decoding="async">
+  <figcaption>Change in predicted right whale density when all three copepod prey fields are included, against the baseline model. These are anomalies, not absolute density. <span class="research-fig__cite">From Ross et al. (2025), <i>Endangered Species Research</i> 58:67&ndash;84. <a href="https://doi.org/10.3354/esr01435">doi.org/10.3354/esr01435</a>. CC BY 4.0.</span></figcaption>
+</figure>
+
+## Looking to the future {#change}
 
 The Gulf of Maine is warming faster than the rest of the ocean, and
 right whales have already redistributed in ways that broke the
@@ -113,12 +120,18 @@ happens to a density estimate built across distinct oceanographic
 regimes, when the relationship the model learned no longer holds? This
 is the underlying question of much of my current work.
 
-**Key papers:** [Projecting right whale habitat suitability for 2050]({{
-'/publication/2021-04-28-projecting-right-whale-habitat-2050' |
-relative_url }}) · [Foraging habitat under future climate scenarios]({{
-'/publication/2025-05-20-right-whale-foraging-habitat-climate' |
-relative_url }}) · [The surprising oceanography of the Gulf of Maine]({{
-'/publication/2023-01-01-gulf-of-maine-oceanography' | relative_url }})
+**Key papers:** [Projecting right whale habitat suitability for
+2050](/publication/2021-04-28-projecting-right-whale-habitat-2050)
+· [Foraging habitat under future climate
+scenarios](/publication/2025-05-20-right-whale-foraging-habitat-climate)
+· [The surprising oceanography of the Gulf of
+Maine](/publication/2023-01-01-gulf-of-maine-oceanography)
+
+
+<figure class="research-fig">
+  <img src="/images/research/habitat-2050.jpg" alt="Twenty-four small maps of the Gulf of Maine showing modelled right whale habitat suitability in the year 2050, for July, August, September and October, under two emissions scenarios and three chlorophyll assumptions. Suitability concentrates along the shelf edge and eastern Gulf." loading="lazy" decoding="async">
+  <figcaption>Year-2050 habitat suitability projections under two emissions scenarios (RCP 4.5 and 8.5) and three chlorophyll assumptions, for July to October. <span class="research-fig__cite">From Ross et al. (2021), <i>Elementa: Science of the Anthropocene</i> 9(1):00058. <a href="https://doi.org/10.1525/elementa.2020.20.00058">doi.org/10.1525/elementa.2020.20.00058</a>. CC BY 4.0.</span></figcaption>
+</figure>
 
 ## Methods and tools
 
@@ -139,8 +152,3 @@ relative_url }}) · [The surprising oceanography of the Gulf of Maine]({{
 -   **Practice** --- R, Python, git, bash, Linux; reproducible
     pipelines; R Shiny and Leaflet
 
-```{=html}
-<!-- FIGURES: drop 2–3 exported maps into images/research/ and add them here, e.g.
-     ![Predicted right whale density, Gulf of Maine](/images/research/density.png)
-     Each needs alt text describing what the map shows, not "Figure 1". -->
-```
