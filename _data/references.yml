@@ -29,6 +29,14 @@
   note: "The foundational description of how these whales actually feed."
 
 - thread: prey
+  authors: "Baumgartner, M. F., Wenzel, F. W., Lysiak, N. S. J., Patrician, M. R."
+  year: 2017
+  title: "North Atlantic right whale foraging ecology and its role in human-caused mortality"
+  venue: "Marine Ecology Progress Series"
+  doi: "10.3354/meps12315"
+  note: "Links where the whales feed to where they are killed."
+
+- thread: prey
   authors: "Sorochan, K. A., Plourde, S., Baumgartner, M. F., Johnson, C. L."
   year: 2021
   title: "Availability, supply, and aggregation of prey (Calanus spp.) in foraging areas of the North Atlantic right whale"
