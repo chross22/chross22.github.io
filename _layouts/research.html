@@ -18,8 +18,8 @@ rewritten freely without touching this layout.
 
     {%- if site.data.references.size > 0 %}
     <h2 id="background">Background reading</h2>
-    <p>Foundational works for this research, including methods and the
-      current state of the ecosystem.</p>
+    <p>Foundational works for this research, including modeling methods and
+      the current state of the ecosystem.</p>
     {%- assign threads = site.data.references | group_by: "thread" -%}
     <ul class="refs">
       {%- for t in threads %}{% for r in t.items %}
