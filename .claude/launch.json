@@ -5,7 +5,8 @@
       "name": "site",
       "runtimeExecutable": "./bin/serve",
       "runtimeArgs": [],
-      "port": 4000
+      "port": 4000,
+      "autoPort": true
     }
   ]
 }

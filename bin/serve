@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Preview the site locally at http://localhost:4000
+# Preview server. Pins Ruby 3.3 (the github-pages gem needs Ruby < 4.0) and a
+# UTF-8 locale (Jekyll's SCSS converter needs it).
 #
-# Pins the toolchain this site actually needs:
-#   - Ruby 3.3  (the `github-pages` gem requires Ruby < 4.0)
-#   - UTF-8 locale (Jekyll's SCSS converter fails on curly quotes without it)
+# Binds $PORT when the harness assigns one, else Jekyll's default 4000. No
+# hardcoded port: nothing here needs a fixed one, so the preview system is
+# free to pick.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"
 export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
-exec bundle exec jekyll serve --livereload "$@"
+exec bundle exec jekyll serve --livereload --port "${PORT:-4000}" "$@"
