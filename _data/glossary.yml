@@ -6,6 +6,10 @@
 - term: "North Atlantic right whale"
   latin: "Eubalaena glacialis"
   anchor: density
+  figure: whale
+  figure_alt: "Line drawing of a North Atlantic right whale in side view,
+    showing the arched jawline, callosities on the head, and a broad paddle-shaped
+    flipper."
   text: "A baleen whale of the western North Atlantic, critically endangered with
     roughly 370 individuals remaining. Slow-moving and surface-feeding, which is
     much of why vessel strikes and fishing-gear entanglement are the leading
@@ -13,6 +17,9 @@
 
 - term: "Calanus finmarchicus"
   anchor: prey
+  figure: copepod
+  figure_alt: "Line drawing of a Calanus finmarchicus copepod in side view, its
+    long paired antennae and feeding setae picked out in a second colour."
   text: "A copepod a few millimetres long, and the right whale's principal prey.
     It stores energy as a lipid sac, so a whale feeding on dense aggregations of
     older-stage individuals gets far more per mouthful than abundance alone
@@ -20,6 +27,9 @@
 
 - term: "τ-patch"
   anchor: prey
+  figure: tau-patch
+  figure_alt: "Schematic: a grid of cells in which those above the feeding threshold are
+    filled, forming a single clustered patch."
   text: "An aggregation of prey dense enough to clear the energetic threshold at
     which feeding returns more energy than it costs. Modelling patches rather
     than average abundance is the distinction this work rests on."
@@ -27,6 +37,9 @@
 - term: "Net primary production"
   abbr: "NPP"
   anchor: density
+  figure: npp
+  figure_alt: "Schematic: light entering the sea surface, with a curve of new growth
+    rising beneath it."
   text: "The rate at which phytoplankton fix carbon into new growth, after their
     own respiration. Like chlorophyll, it is a satellite- or model-derived stand-in
     for the base of the food web, several steps removed from the copepods a right
@@ -35,24 +48,35 @@
 - term: "Density surface model"
   abbr: "DSM"
   anchor: density
+  figure: dsm
+  figure_alt: "Schematic: a survey track crossing a mapped field, with sightings marked
+    along it."
   text: "A model that turns line-transect survey counts into a map of animal
     density, correcting for how much was surveyed and how likely an animal was to
     be seen at all."
 
 - term: "Detection function"
   anchor: density
+  figure: detection
+  figure_alt: "Schematic: a curve falling from left to right, the probability of
+    detecting an animal against distance from the survey line."
   text: "The curve describing how the probability of spotting an animal falls
     with distance from the survey line. Without it, a map records where observers
     looked rather than where animals were."
 
 - term: "Regime shift"
   anchor: change
+  figure: regime-shift
+  figure_alt: "Schematic: a flat line stepping abruptly to a new level and staying
+    there."
   text: "An abrupt, persistent reorganisation of an ecosystem into a different
     state, rather than a gradual trend. It matters for models because a
     relationship learned before the shift may not hold after it."
 
 - term: "Gulf of Maine"
   anchor: change
+  figure: swell
+  figure_alt: "Schematic: three nested swells."
   text: "A semi-enclosed sea between Cape Cod and Nova Scotia, warming faster
     than almost any other part of the world ocean — which is why right whale
     distribution there has changed within a single career."

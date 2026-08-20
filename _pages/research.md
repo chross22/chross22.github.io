@@ -22,7 +22,7 @@ because these models are not academic exercises: they are considered by
 the entities who build the tools used to manage the critically
 endangered North Atlantic right whale.
 
-## Whale prey {#prey}
+## {% include mark.html name="copepod" class="mark--section" %}Whale prey {#prey}
 
 Right whales eat copepods --- primarily *Calanus finmarchicus*. However,
 a whale does not necessarily respond to average copepod abundance, but
@@ -60,7 +60,7 @@ environmental covariates.
   <figcaption>Predicted <em>Calanus finmarchicus</em> &tau;-patches by month, at a threshold of 10,000 individuals m<sup>&minus;2</sup>. <span class="research-fig__cite">From Ross et al. (2023), <i>Marine Ecology Progress Series</i> 703:1&ndash;16. <a href="https://doi.org/10.3354/meps14204">doi.org/10.3354/meps14204</a>. CC BY 4.0.</span></figcaption>
 </figure>
 
-## Whale habitat preference {#density}
+## {% include mark.html name="whale" class="mark--section" %}Whale habitat preference {#density}
 
 Density surface models turn systematic line-transect survey data into
 maps of animal density. They are only as good as their treatment of the
@@ -101,7 +101,7 @@ the Akaike information criterion (AIC) alone.
   <figcaption>Change in predicted right whale density when all three copepod prey fields are included, against the baseline model. These are anomalies, not absolute density. <span class="research-fig__cite">From Ross et al. (2025), <i>Endangered Species Research</i> 58:67&ndash;84. <a href="https://doi.org/10.3354/esr01435">doi.org/10.3354/esr01435</a>. CC BY 4.0.</span></figcaption>
 </figure>
 
-## Looking to the future {#change}
+## {% include mark.html name="gulf-map" class="mark--section" %}Looking to the future {#change}
 
 The Gulf of Maine is warming faster than the rest of the ocean, and
 right whales have already redistributed in ways that broke the

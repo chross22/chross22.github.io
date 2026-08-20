@@ -42,6 +42,7 @@ rewritten freely without touching this layout.
     <dl>
       {%- for g in site.data.glossary %}
       <dt>
+        {%- if g.figure %}{% include mark.html name=g.figure class="mark--term" label=g.figure_alt %}{% endif -%}
         {%- if g.anchor %}<a href="#{{ g.anchor }}">{{ g.term }}</a>{% else %}{{ g.term }}{% endif -%}
         {%- if g.abbr %} <span class="glossary__abbr">({{ g.abbr }})</span>{% endif -%}
         {%- if g.latin %}<br><i class="glossary__latin">{{ g.latin }}</i>{% endif -%}

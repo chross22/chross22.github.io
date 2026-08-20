@@ -485,7 +485,10 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 
 .glossary dl { margin: 0; }
 
+// Contains the floated term icon; without it the float escapes into the
+// definition below.
 .glossary dt {
+  overflow: hidden;
   font-size: var(--fs-sm);
   font-weight: 650;
   margin-top: var(--sp-4);
@@ -494,6 +497,45 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
 
 .glossary__latin { font-weight: 400; font-size: var(--fs-xs); color: var(--text-muted); }
 .glossary__abbr  { font-weight: 400; color: var(--text-muted); }
+
+// ---- marks ---------------------------------------------------------------
+// Camille's two traced cartoons and the glyph set that reduces the /code/
+// schematics to icon scale. All of them inherit colour, so one file serves
+// both themes. See _includes/mark.html.
+
+.mark { height: auto; }
+
+// Beside a section heading. Sized in em so it tracks the heading, and aligned
+// by measurement rather than guess: an inline-block sits with its bottom on
+// the baseline, so a box of height H centres on the cap height (~0.7em) at an
+// offset of 0.35em - H/2.
+.mark--section {
+  display: inline-block;
+  margin-right: 0.45em;
+  opacity: 0.9;
+}
+.mark--section.mark--copepod  { height: 1.5em; vertical-align: -0.40em; }
+.mark--section.mark--whale    { height: 1.1em; vertical-align: -0.20em; }
+
+// The map is the one mark that cannot shrink. Recognising the Gulf means
+// resolving the Cape Cod hook and the Bay of Fundy notch, which needs real
+// coastline — about 130 points — and that stops reading below roughly 56px.
+// Its window also carries margin on every side rather than cropping to the
+// ink, so the coast is never cut off at the frame; that margin costs apparent
+// size, which is why it sits at 2.8em where the other two sit at 1.5 and 1.1.
+.mark--section.mark--gulf-map { height: 2.8em; vertical-align: -1.05em; }
+
+// In the glossary, floated beside the term it belongs to. 32px is a floor,
+// not a preference: below about 28 the traced pencil line stops resolving and
+// both animals collapse into a smudge. The glyphs were drawn to that floor.
+.mark--term {
+  float: left;
+  height: 32px;
+  min-width: 32px;
+  width: auto;
+  margin: 0 var(--sp-2) var(--sp-1) 0;
+  opacity: 0.85;
+}
 
 .glossary dd {
   margin: var(--sp-1) 0 0;
