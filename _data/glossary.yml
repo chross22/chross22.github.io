@@ -24,6 +24,14 @@
     which feeding returns more energy than it costs. Modelling patches rather
     than average abundance is the distinction this work rests on."
 
+- term: "Net primary production"
+  abbr: "NPP"
+  anchor: density
+  text: "The rate at which phytoplankton fix carbon into new growth, after their
+    own respiration. Like chlorophyll, it is a satellite- or model-derived stand-in
+    for the base of the food web, several steps removed from the copepods a right
+    whale is feeding on."
+
 - term: "Density surface model"
   abbr: "DSM"
   anchor: density

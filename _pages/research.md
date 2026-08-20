@@ -68,14 +68,16 @@ observation process: how detectability falls off with distance, how
 effort is distributed, how much of the variance in a map is survey
 design rather than biology.
 
-The question I have spent the most time on is what goes in as a prey
-covariate. The convention is chlorophyll concentration --- satellite- or
-model-derived several steps removed from the prey right whales are
-actually targeting. Substituting tailored prey fields for that proxy
-improves predicted distributions: the best-performing model combined all
-three copepod prey fields and put density where right whales actually
-are, concentrated in the deep basins of the Gulf of Maine and the Great
-South Channel, rising through the summer.
+A central theme of my work has been designing prey covariates and
+testing how they can improve endangered species habitat models. Marine
+habitat models conventionally rely upon chlorophyll-a concentration or
+NPP models as a proxy for zooplankton prey. However, satellite- or
+model-derived chlorophyll products are several steps removed from the
+food right whales are actually targeting. We have found that
+substituting whale-specific prey fields for prey proxies improves right
+whale density model distributions: in a recent paper, combining three
+right whale-specific copepod prey fields improved density estimates to
+closer represent what we would expect in the field.
 
 This work emphasizes the need for continued surveying and sampling of
 both whales and zooplankton.
