@@ -3,6 +3,11 @@
 # first occur below — so the leading entry sets the first heading on the page.
 # taupatch leads: it implements the method in Ross et al. (2023).
 # To add a package, copy a block.
+# `docs` is the pkgdown reference site, built by each repo's pkgdown
+# workflow and served from camilleross.org/<package>/ — GitHub applies this
+# site's custom domain to every project page on the account. Omit the key
+# when a package has no published site yet; /code/ then shows only the repo
+# button rather than linking somewhere that 404s.
 
 - name: "taupatch"
   group: "Models"
@@ -33,6 +38,7 @@
       model_set(key = c("hn", "hr")),
       truncation = 400)
   schematic: "detection-curves"
+  docs: "https://camilleross.org/dsfit/"
   repo: "https://github.com/chross22/dsfit"
 
 - name: "narwcr"
@@ -46,6 +52,7 @@
     dat <- read_narwc("extract.csv")
     narwc_column_mapping(dat)
   schematic: "column-tidy"
+  docs: "https://camilleross.org/narwcr/"
   repo: "https://github.com/chross22/narwcr"
 
 - name: "distsamp"
@@ -61,17 +68,21 @@
     validate_narwc(dat)   # never stops
     segs <- segment_survey(dat, 5)
   schematic: "transect-segments"
+  docs: "https://camilleross.org/distsamp/"
   repo: "https://github.com/chross22/distsamp"
 
 - name: "datamatch"
   group: "Environmental covariates"
   language: "R"
   status: "maintained"
-  summary: "Fetches ocean and atmosphere data from five sources — Copernicus Marine, FVCOM,
-    HYCOM and others — and joins it to point observations in space and time. Variables are
-    requested by plain name: ask for SST, not thetao, and the catalog finds the product.
-    matchData() records which source each value came from, because SST from three models is
-    three different numbers."
+  summary: "Fetches ocean and atmosphere data from seven sources — Copernicus Marine, HYCOM,
+    FVCOM, NOAA CEFI, CCMP, NOAA ERDDAP and NASA OB.DAAC — behind one interface and one set of variable names: ask for
+    SST, not thetao, and the catalog finds the product. The join is a general spatiotemporal
+    nearest-feature match, so either side can be sightings, survey stations, tag positions, or
+    another gridded product. It also resamples products onto a common resolution, fills gaps in
+    satellite ocean colour, and supplies seafloor terrain and basin-scale climate indices. Every
+    value keeps a record of the source it came from, because SST from three models is three
+    different numbers."
   example: |
     env <- accessCopernicus(
       vars = c("SST", "SSS", "MLD"),
@@ -79,6 +90,7 @@
       bounding_box = bb)
     matched <- matchData(sightings, env)
   schematic: "grid-join"
+  docs: "https://camilleross.org/datamatch/"
   repo: "https://github.com/chross22/datamatch"
 
 - name: "derivoce"
@@ -92,6 +104,7 @@
     grad  <- horizontal_gradient(sst)
     shore <- distance_to_shore(grid)
   schematic: "gradient-field"
+  docs: "https://camilleross.org/derivoce/"
   repo: "https://github.com/chross22/derivoce"
 
 - name: "fancyfx"
@@ -106,4 +119,5 @@
     fit <- mgcv::gam(y ~ s(sst), data = d)
     plotEffects(fit, d, "sst")
   schematic: "effect-rug"
+  docs: "https://camilleross.org/fancyfx/"
   repo: "https://github.com/chross22/fancyfx"
