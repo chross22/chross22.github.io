@@ -10,11 +10,11 @@ layout: base
     <div class="social">
       <a class="btn btn--primary" href="{{ site.cv_pdf | relative_url }}">{% include icon.html name="download" %} CV (PDF)</a>
       <a class="btn" href="mailto:{{ a.email }}">{% include icon.html name="email" %} Email</a>
-      <a class="btn" href="{{ a.googlescholar }}">{% include icon.html name="scholar" %} Scholar</a>
-      <a class="btn" href="{{ a.orcid }}">{% include icon.html name="orcid" %} ORCID</a>
-      <a class="btn" href="{{ a.github_url }}">{% include icon.html name="github" %} GitHub</a>
-      <a class="btn" href="{{ a.linkedin }}">{% include icon.html name="linkedin" %} LinkedIn</a>
-      <a class="btn" href="{{ a.researchgate }}">{% include icon.html name="researchgate" %} ResearchGate</a>
+      <a class="btn" href="{{ a.googlescholar }}" rel="me">{% include icon.html name="scholar" %} Scholar</a>
+      <a class="btn" href="{{ a.orcid }}" rel="me">{% include icon.html name="orcid" %} ORCID</a>
+      <a class="btn" href="{{ a.github_url }}" rel="me">{% include icon.html name="github" %} GitHub</a>
+      <a class="btn" href="{{ a.linkedin }}" rel="me">{% include icon.html name="linkedin" %} LinkedIn</a>
+      <a class="btn" href="{{ a.researchgate }}" rel="me">{% include icon.html name="researchgate" %} ResearchGate</a>
     </div>
   </div>
   {% include portrait.html %}

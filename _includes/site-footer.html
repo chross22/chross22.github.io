@@ -1,4 +1,7 @@
-{%- comment -%} Footer: affiliation, contact, social links. {%- endcomment -%}
+{%- comment -%}
+Footer: affiliation, contact, social links. The profile links carry rel="me"
+so GitHub, ORCID, and the rest can verify this site as the same identity.
+{%- endcomment -%}
 {%- assign a = site.author -%}
 <footer class="footer">
   <div class="container footer__inner">
@@ -7,13 +10,19 @@
       <div class="text-sm">
         <a href="mailto:{{ a.email }}">{{ a.email }}</a>
       </div>
+      {%- comment -%}
+      The iD is spelled out, not just linked behind an icon: ORCID's display
+      guidelines ask for the full URI in text wherever the iD is shown, and it
+      is the identifier people copy into a form.
+      {%- endcomment -%}
+      <div class="text-sm">ORCID <a href="{{ a.orcid }}" rel="me">{{ a.orcid | remove: "https://" }}</a></div>
     </div>
     <div class="social">
-      <a class="btn" href="{{ a.googlescholar }}" aria-label="Google Scholar">{% include icon.html name="scholar" %}</a>
-      <a class="btn" href="{{ a.orcid }}" aria-label="ORCID">{% include icon.html name="orcid" %}</a>
-      <a class="btn" href="{{ a.github_url }}" aria-label="GitHub">{% include icon.html name="github" %}</a>
-      <a class="btn" href="{{ a.linkedin }}" aria-label="LinkedIn">{% include icon.html name="linkedin" %}</a>
-      <a class="btn" href="{{ a.researchgate }}" aria-label="ResearchGate">{% include icon.html name="researchgate" %}</a>
+      <a class="btn" href="{{ a.googlescholar }}" rel="me" aria-label="Google Scholar">{% include icon.html name="scholar" %}</a>
+      <a class="btn" href="{{ a.orcid }}" rel="me" aria-label="ORCID">{% include icon.html name="orcid" %}</a>
+      <a class="btn" href="{{ a.github_url }}" rel="me" aria-label="GitHub">{% include icon.html name="github" %}</a>
+      <a class="btn" href="{{ a.linkedin }}" rel="me" aria-label="LinkedIn">{% include icon.html name="linkedin" %}</a>
+      <a class="btn" href="{{ a.researchgate }}" rel="me" aria-label="ResearchGate">{% include icon.html name="researchgate" %}</a>
     </div>
   </div>
 </footer>
