@@ -4,10 +4,11 @@
 # taupatch leads: it implements the method in Ross et al. (2023).
 # To add a package, copy a block.
 # `docs` is the pkgdown reference site, built by each repo's pkgdown
-# workflow and served from camilleross.org/<package>/ — GitHub applies this
-# site's custom domain to every project page on the account. Omit the key
-# when a package has no published site yet; /code/ then shows only the repo
-# button rather than linking somewhere that 404s.
+# workflow on every push to its default branch and served from
+# camilleross.org/<package>/ — GitHub applies this site's custom domain to
+# every project page on the account. Omit the key when a package has no
+# published site yet; /code/ then shows only the repo button rather than
+# linking somewhere that 404s.
 
 - name: "taupatch"
   group: "Models"
@@ -20,6 +21,7 @@
     config <- load_config("study.yaml")
     run_taupatch_app()   # or use the config
   schematic: "threshold-map"
+  docs: "https://camilleross.org/taupatch/"
   repo: "https://github.com/chross22/taupatch"
   paper: "/publication/2023-01-12-calanus-finmarchicus-thresholds"
 
