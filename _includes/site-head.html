@@ -13,7 +13,9 @@ defines custom properties the markup relies on, an undefined var() in an SVG
 fill silently renders black rather than falling back.
 {%- endcomment -%}
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
-<link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+{%- comment -%} ?v=2: the icon changed from the wave mark to the traced fluke,
+and browsers cache favicons far past normal asset lifetimes. {%- endcomment -%}
+<link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}?v=2" type="image/svg+xml">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
 
 {%- comment -%}
