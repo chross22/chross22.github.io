@@ -21,10 +21,13 @@
 .hero__name {
   // A step past --fs-3xl, here only: this is the cover page, and the centred
   // name is its one act of display. Interior h1s keep the shared scale.
-  // The inner sum is interpolated: this Sass would otherwise try to add rem
-  // to vw at compile time. (--fs-3xl gets away with it only because custom
-  // property values are opaque to Sass.)
-  font-size: clamp(2.25rem, #{"1.7rem + 2.2vw"}, 3rem);
+  // The outer min() exists for phones: at 36px the full name is ~371px of
+  // Charter and a 375px screen offers 327, so it broke as "Camille H. /
+  // Ross, Ph.D.". 8.1vw keeps it on one line down to ~300px wide and is
+  // inert above ~445px, where the clamp takes over.
+  // Interpolated whole: this Sass would otherwise claim min() as its own
+  // function and fold the rem/vw arithmetic at compile time.
+  font-size: #{"min(clamp(2.25rem, 1.7rem + 2.2vw, 3rem), 8.1vw)"};
   font-weight: 600;
   letter-spacing: -0.005em;
   margin-bottom: var(--sp-3);
