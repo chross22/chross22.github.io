@@ -1,0 +1,25 @@
+{%- comment -%}
+The three research lines as a row under the hero, each carrying the drawing it
+already heads its section with on /research/. This exists to do two jobs at
+once: give a first-time visitor the shape of the work before they read a
+sentence, and break up the About prose, which is a single 600-word block.
+
+Content lives in _data/strands.yml. Renders nothing if that file is empty, so
+removing the strands is a data edit rather than a layout one.
+
+Each card is one link target, not a card with a link inside it — the whole
+block is clickable, and the arrow is decorative.
+{%- endcomment -%}
+{%- assign strands = site.data.strands -%}
+{%- if strands and strands.size > 0 -%}
+<nav class="strands" aria-label="Research areas">
+  {%- for s in strands %}
+  <a class="strand" href="{{ '/research/' | relative_url }}#{{ s.anchor }}">
+    <span class="strand__ico">{% include mark.html name=s.mark class="mark--strand" %}</span>
+    <span class="strand__title">{{ s.title }}</span>
+    <span class="strand__text">{{ s.text | strip_newlines }}</span>
+    <span class="strand__more" aria-hidden="true">Read more →</span>
+  </a>
+  {%- endfor %}
+</nav>
+{%- endif -%}

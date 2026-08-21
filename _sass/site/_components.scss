@@ -344,11 +344,12 @@ details.cite pre { margin-top: var(--sp-3); font-size: var(--fs-xs); white-space
   // characters a line, which is below comfortable reading. The grid therefore
   // widens past the container — but only to 82rem, and only here. Body pages
   // keep the narrower measure, where a single column should stay readable.
-  // The hero has to widen with the grid or the name sits indented relative to
-  // the prose beneath it.
+  // The hero and the strands have to widen with the grid, or they sit indented
+  // relative to the prose beneath them.
   .home-grid,
   .media-strip,
-  .hero {
+  .hero,
+  .strands {
     width: min(82rem, 100vw - 2 * var(--sp-6));
     margin-inline: calc(50% - min(41rem, 50vw - var(--sp-6)));
   }

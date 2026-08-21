@@ -7,13 +7,24 @@
   align-items: start;
   padding-block: var(--sp-6) var(--sp-7);
   border-bottom: 1px solid var(--border);
+  // Centred, unlike every interior page: the hero sits between two symmetric
+  // full-width elements — the photo banner above, the strand row below — and
+  // centring makes the three read as one composed unit. Interior pages open
+  // left-aligned on purpose; this is cover-page treatment, chosen once.
+  text-align: center;
 }
+.hero .social { justify-content: center; }
 @media (min-width: 48rem) {
   .hero--with-aside { grid-template-columns: minmax(0, 1fr) 15rem; }
 }
 
 .hero__name {
-  font-size: var(--fs-3xl);
+  // A step past --fs-3xl, here only: this is the cover page, and the centred
+  // name is its one act of display. Interior h1s keep the shared scale.
+  // The inner sum is interpolated: this Sass would otherwise try to add rem
+  // to vw at compile time. (--fs-3xl gets away with it only because custom
+  // property values are opaque to Sass.)
+  font-size: clamp(2.25rem, #{"1.7rem + 2.2vw"}, 3rem);
   font-weight: 600;
   letter-spacing: -0.005em;
   margin-bottom: var(--sp-3);
@@ -45,6 +56,79 @@
   border-radius: var(--radius-md);
   object-fit: cover;
   background: var(--surface);
+}
+
+// ---- research strands ----------------------------------------------------
+// A row of three under the hero. Rules rather than cards: this site draws its
+// structure with lines, and three bordered boxes would be the first panel-and-
+// shadow treatment anywhere on it.
+.strands {
+  display: grid;
+  gap: 0;
+  border-block: 1px solid var(--border);
+  margin-block: var(--sp-6);
+}
+@media (min-width: 48rem) {
+  .strands { grid-template-columns: repeat(3, 1fr); }
+}
+
+.strand {
+  display: block;
+  padding: var(--sp-5);
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  // Centred with the hero above — see the note there.
+  text-align: center;
+}
+.strand:last-child { border-bottom: 0; }
+
+@media (min-width: 48rem) {
+  .strand { border-bottom: 0; border-right: 1px solid var(--border); }
+  .strand:last-child { border-right: 0; }
+}
+
+// The icons vary in aspect — the whale is wide, the map is square — so the
+// slot is a fixed height with the drawings sitting on its baseline. Aligning
+// their boxes instead would leave the whale floating.
+.strand__ico {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 3.25rem;
+  margin-bottom: var(--sp-3);
+}
+.mark--strand { height: 2.75rem; width: auto; }
+.mark--strand.mark--gulf-map { height: 3.25rem; }
+
+.strand__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  margin-bottom: var(--sp-2);
+}
+.strand__text {
+  display: block;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-muted);
+}
+.strand__more {
+  display: block;
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--link);
+}
+
+// The whole card is the link, so the hover and focus cues belong to it. Both
+// carry a shape change, not just colour — see the contract in _tokens.scss.
+.strand:hover { background: var(--surface); }
+.strand:hover .strand__more { text-decoration: underline; }
+.strand:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
 }
 
 // No-photo fallback: nested bathymetric contours. Abstract, on-theme, and

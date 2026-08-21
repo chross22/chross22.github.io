@@ -1,0 +1,24 @@
+# The three research lines, shown as a row under the hero on the homepage.
+#
+# Kept in data rather than in the layout for the same reason as glossary.yml:
+# editing a sentence here never means touching markup. `mark` names a drawing
+# in _includes/mark.html, and `anchor` is the section on /research/ the strand
+# belongs to — the same three sections those drawings already head.
+
+- title: "Whale prey"
+  mark: copepod
+  anchor: prey
+  text: "Copepod patches dense enough to be worth eating — modelled from the
+    perspective of a foraging whale, not from average abundance."
+
+- title: "Habitat preference"
+  mark: whale
+  anchor: density
+  text: "Density surface models that separate what the survey saw from what is
+    actually out there."
+
+- title: "A changing ocean"
+  mark: gulf-map
+  anchor: change
+  text: "Where the animals go when the water they were modelled in stops
+    behaving like itself."
