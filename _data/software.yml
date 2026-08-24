@@ -123,3 +123,20 @@
   schematic: "effect-rug"
   docs: "https://camilleross.org/fancyfx/"
   repo: "https://github.com/chross22/fancyfx"
+
+- name: "fancymaps"
+  group: "Visualization"
+  language: "R"
+  status: "in development"
+  summary: "Draws the maps a spatial model produces, with the parts a reader needs to
+    navigate one: land, a stated projection so that area means area, and a colour scale
+    chosen for the quantity rather than whichever default fell out. A value and its
+    uncertainty come out as one figure on a shared extent with aligned panels, and a
+    series over time as small multiples on one scale — panels drawn separately do not
+    compare. Takes sf, terra, or a plain data frame with coordinate columns. Sister
+    package to fancyfx, which plots the same models' effects."
+  example: |
+    map_pair(pred, uncertainty = "se",
+             coastline = coastline())
+  schematic: "paired-map"
+  repo: "https://github.com/chross22/fancymaps"
