@@ -13,7 +13,7 @@ them: whether visually from an airplane or vessel or acoustically from
 hydrophones. Both of those observation types are shaped as much by the
 survey as by the animal's behavior and environmental conditions.
 
-My work as a marine ecologist focused on conservation considers what we
+My work as a biological oceanographer focused on conservation considers what we
 can infer from the data we are able to collect. I build models that
 separate the observation process from the ecological process, so that
 what comes out the other end is an estimate of what is actually there

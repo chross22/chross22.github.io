@@ -78,7 +78,7 @@ card, and JSON-LD. Branches on page.layout for Person vs ScholarlyArticle.
   "url": {{ site.url | jsonify }},
   "email": {{ a.email | prepend: "mailto:" | jsonify }},
   "affiliation": { "@type": "Organization", "name": {{ a.affiliation | jsonify }} },
-  "knowsAbout": ["Marine ecology","Species distribution modeling","Density surface modeling","Oceanography","Zooplankton ecology","Statistical learning"],
+  "knowsAbout": ["Biological oceanography","Species distribution modeling","Density surface modeling","Oceanography","Zooplankton ecology","Statistical learning"],
   "identifier": {{ a.orcid | jsonify }},
   "sameAs": [{{ a.orcid | jsonify }}, {{ a.googlescholar | jsonify }}, {{ a.github_url | jsonify }}, {{ a.linkedin | jsonify }}, {{ a.researchgate | jsonify }}]
 }

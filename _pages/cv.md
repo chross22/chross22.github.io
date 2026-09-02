@@ -10,8 +10,8 @@ actions:
     icon: download
 ---
 
-Quantitative marine ecologist and postdoctoral researcher specializing in the estimation
-of ecological fields from sparse, irregular, and effort-limited observations. Seven years
+Quantitative biological oceanographer and postdoctoral researcher specializing in the estimation
+of ecological fields from sparse, irregular, and effort-limited observations. Eight years
 of experience separating the observation process from the ecological process —
 detectability, survey effort, and multi-resolution data fusion — in models that directly
 inform decision-making around endangered species and environmental management. Skilled in
@@ -92,12 +92,13 @@ autocorrelation structure, applied to tidal signal analysis (MATLAB); quantifyin
 effect of a documented oceanographic regime shift on model-derived density estimates
 
 **Programming** — expertise in R, Python, git, bash/Unix shell scripting, and Linux;
-experience with MATLAB, Java, and ArcGIS; working knowledge of JavaScript, HTML, CSS, SQL
+experience with MATLAB, Java, and ArcGIS; limited experience with JavaScript, HTML,
+CSS, and SQL
 
 **Analysis and visualization** — species distribution modeling, density surface modeling,
 generalized additive models, large dataset management; training artificial neural networks
-from scratch, including CNNs for image classification, video processing algorithms, and
-natural language processing; R Shiny and Leaflet mapping
+from scratch in TensorFlow, including CNNs for image classification, video processing
+algorithms, and natural language processing; R Shiny and Leaflet mapping
 
 **Remote sensing and data sources** — satellite-derived oceanographic and climate products
 including Copernicus Earth Observation and NASA EarthData (chlorophyll concentration, sea
@@ -108,7 +109,12 @@ sampling cruises
 **Field and sampling methods** — deploying CTD and Niskin rosettes; zooplankton sampling
 using bongo nets; marine mammal spotting
 
+**Languages** — English (native); German (CEFR B2, self-assessed); Spanish, Latin
+American (CEFR B2, self-assessed)
+
 ## Publications
+
+Google Scholar, September 2026: 113 citations · h-index 6 · i10-index 5.
 
 {% assign inreview = site.publications | where: "status", "in-review" | sort: "date" | reverse %}
 {% if inreview.size > 0 %}*In review*
@@ -137,7 +143,7 @@ Selected interviews and features are listed on the [media page]({{ '/media/' | r
 ## Software
 
 Eight public R packages supporting this work are described on the
-[code and data page]({{ '/code/' | relative_url }}).
+[code page]({{ '/code/' | relative_url }}).
 
 ## Committees, working groups, and society memberships
 
@@ -151,4 +157,4 @@ Eight public R packages supporting this work are described on the
 
 ## References
 
-Available on request.
+Available upon request.

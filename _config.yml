@@ -8,10 +8,10 @@
 # Site Settings
 locale                   : "en-US"
 title                    : "Camille H. Ross, Ph.D."
-tagline                  : "Quantitative Marine Ecologist"
+tagline                  : "Quantitative Biological Oceanographer"
 title_separator          : "-"
 name                     : &name "Camille H. Ross, Ph.D."
-description              : &description "Camille H. Ross is a quantitative marine ecologist modelling endangered North Atlantic right whales, their copepod prey, and how both shift as the Gulf of Maine warms."
+description              : &description "Camille H. Ross is a quantitative biological oceanographer modelling endangered North Atlantic right whales, their copepod prey, and how both shift as the Gulf of Maine warms."
 # Canonical origin. This feeds every absolute URL the site emits — the
 # canonical link, Open Graph tags, the Atom feed, and the Google Scholar
 # citation_pdf_url tags. It must match the CNAME file at the repo root, or
@@ -87,7 +87,7 @@ analytics:
 author:
   name             : "Camille H. Ross, Ph.D."
   surname_initials : "Ross, C. H."   # used to bold her name in author lists
-  job_title        : "Quantitative marine ecologist"
+  job_title        : "Quantitative biological oceanographer"
   affiliation      : "Darling Marine Center, University of Maine"
   location         : "Walpole, ME"
   email            : "camille.ross@maine.edu"

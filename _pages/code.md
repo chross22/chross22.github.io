@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Code and data"
+title: "Code"
 permalink: /code/
 lede: "Public R packages, installable and documented. Each runs on any dataset in the documented shape — not only mine."
 redirect_from:
