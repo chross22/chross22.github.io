@@ -45,7 +45,7 @@ and time.
 **Key papers:** [Estimating right whale prey based on *Calanus
 finmarchicus*
 thresholds](/publication/2023-01-12-calanus-finmarchicus-thresholds)
-· [Beyond *Calanus*: changes to the copepod community](/publication/2025-01-09-beyond-calanus-copepod-community) · [*Calanus* prey and foraging habitat in Canadian
+· [Beyond *Calanus*: changes to the copepod community](/publication/2025-01-09-beyond-calanus-copepod-community) · [*Calanus* species and foraging habitat in Canadian
 waters](/publication/2024-08-01-calanus-energetics-foraging-habitat-models)
 
 **Code:** [`taupatch`](https://github.com/chross22/taupatch) implements
