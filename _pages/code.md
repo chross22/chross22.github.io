@@ -2,7 +2,7 @@
 layout: page
 title: "Code"
 permalink: /code/
-lede: "Public R packages, installable and documented. Each runs on any dataset in the documented shape — not only mine."
+lede: "Public R and Python packages, installable and documented. Each runs on any dataset in the documented shape — not only mine."
 redirect_from:
   - /portfolio/
 ---
@@ -26,10 +26,14 @@ remotes::install_github("chross22/taupatch")
     <span class="pkg__lang">{{ pkg.language }}</span>
   </div>
   <p>{{ pkg.summary }}</p>
+  {%- if pkg.language == "Python" %}
+  <p class="pkg__install"><code>pip install git+https://github.com/chross22/{{ pkg.name }}</code></p>
+  {%- else %}
   <p class="pkg__install"><code>remotes::install_github("chross22/{{ pkg.name }}")</code></p>
+  {%- endif %}
   {%- if pkg.example %}
   <div class="pkg__demo">
-    <div class="pkg__code">{% highlight r %}{{ pkg.example }}{% endhighlight %}</div>
+    <div class="pkg__code">{% if pkg.language == "Python" %}{% highlight python %}{{ pkg.example }}{% endhighlight %}{% else %}{% highlight r %}{{ pkg.example }}{% endhighlight %}{% endif %}</div>
     {%- if pkg.schematic %}{% include schematic.html kind=pkg.schematic %}{% endif %}
   </div>
   {%- endif %}

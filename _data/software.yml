@@ -1,4 +1,4 @@
-# Public R packages and analysis code.
+# Public R and Python packages and analysis code.
 # `group` drives the headings on /code/, and groups appear in the order they
 # first occur below — so the leading entry sets the first heading on the page.
 # taupatch leads: it implements the method in Ross et al. (2023).
@@ -91,9 +91,27 @@
       years = 2003:2017, months = 1:12,
       bounding_box = bb)
     matched <- matchData(sightings, env)
-  schematic: "grid-join"
   docs: "https://camilleross.org/datamatch/"
   repo: "https://github.com/chross22/datamatch"
+
+- name: "pydatamatch"
+  group: "Environmental covariates"
+  language: "Python"
+  status: "in development"
+  summary: "The Python counterpart of datamatch, starting with the Copernicus Marine
+    accessor. Variables are requested by the same short catalog names — SST, not thetao —
+    and observations are any pandas DataFrame with coordinate and date columns, recognised
+    by prefix and never guessed. The matching guarantees carry over from the R original:
+    one row out per row in, in the same order; your columns are never overwritten; and
+    every joined value keeps a source column saying which product produced it."
+  example: |
+    env = dm.access_copernicus(
+        variables=["SST", "SSS", "MLD"],
+        years=range(2003, 2018),
+        bounding_box=bb)
+    matched = dm.match_data(obs, env)
+  schematic: "grid-join"
+  repo: "https://github.com/chross22/pydatamatch"
 
 - name: "derivoce"
   group: "Environmental covariates"
