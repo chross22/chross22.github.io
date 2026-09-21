@@ -92,8 +92,8 @@ autocorrelation structure, applied to tidal signal analysis (MATLAB); quantifyin
 effect of a documented oceanographic regime shift on model-derived density estimates
 
 **Programming** — expertise in R, Python, git, bash/Unix shell scripting, and Linux;
-experience with MATLAB, Java, and ArcGIS; limited experience with JavaScript, HTML,
-CSS, and SQL
+experience with MATLAB, Java, ArcGIS, and SQL; limited experience with JavaScript, HTML,
+and CSS
 
 **Analysis and visualization** — species distribution modeling, density surface modeling,
 generalized additive models, large dataset management; training artificial neural networks
